@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio/', // Ensure this matches your GitHub repo name
+  base: '/',
   css: {
     postcss: './postcss.config.js', // Optional if PostCSS is configured
   },
