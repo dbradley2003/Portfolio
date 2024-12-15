@@ -52,7 +52,7 @@ Technologies Used:
 
     const handleClick = () => {
         playEffect()
-        navigate('/')
+        navigate('/Portfolio/')
     }
 
 

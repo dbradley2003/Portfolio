@@ -55,7 +55,7 @@ const [playEffect] = useSound(click, { volume: 0.2 });
 
 const handleClick = () => {
     playEffect()
-    navigate('/')
+    navigate('/Portfolio/')
 }
 
 return (

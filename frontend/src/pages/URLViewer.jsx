@@ -19,7 +19,7 @@ function URLViewer() {
 
     const handleClick = () => {
         playEffect()
-        navigate('/')
+        navigate('/Portfolio/')
     }
 
 
