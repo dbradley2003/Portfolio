@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from './pages/home'
 import '../src/input.css';
 import '../src/app.css'
@@ -23,11 +23,11 @@ function App() {
 
   function Pages(){
     return(
-   
+     
      <Router>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Portfolio" element={<Home />} />
         <Route path="/text/:fileName" element={<TextViewer />} />
         <Route path="/pdf/:fileName" element={<PDFViewer />} />
         <Route path="/url/:fileName" element={<URLViewer />} />
@@ -35,7 +35,7 @@ function App() {
       </Routes>
   
      </Router>
-
+     
    
   )
 }
