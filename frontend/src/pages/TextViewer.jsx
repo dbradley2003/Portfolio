@@ -17,7 +17,7 @@ Hi, I'm Dominic and I'm a third year student at DePaul University, studying comp
 applications and mostly use Django/React as my framework. I currently work remotely as a web developer for a nonprofit in San Jose called 
 Hunger at Home. I am continously learning and applying myself into this field because the future for technology excites me and anticipate 
 the future world we might all live in one day (if AI doesn't end our species). Anyways, this is my first ever Hack a thon with codex and 
-am excited to share myportfolio, especially since I probably needed to build one at some point anyways.
+am excited to share my portfolio, especially since I probably needed to build one at some point anyways.
 
 `,
 "TeamUpNow.txt": `

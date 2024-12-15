@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
       <Page size="A4" style={styles.page}>
         <Text style={styles.title}>PDF Viewer: {fileName}</Text>
         <Text style={styles.content}>
-          This is a dynamically generated PDF document for the file: {fileName}.
+          My Experience {fileName}.
+          Coming Soon..
         </Text>
         <Text style={styles.footer}>© 2024 Dominic's Retro File Explorer</Text>
       </Page>
