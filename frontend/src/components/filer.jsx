@@ -95,11 +95,11 @@ else if (item.type == "file"){
     navigate(`/text/${item.name}`);
     break;
   case "pdf":
-    navigate(`pdf/${item.name}`);
+    navigate(`/pdf/${item.name}`);
     break;
   
   case "url":
-    navigate(`url/${item.name}`);
+    navigate(`/url/${item.name}`);
     break;
   
  }
