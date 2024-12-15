@@ -27,7 +27,7 @@ function App() {
      <Router>
 
       <Routes>
-        <Route path="/Portfolio" element={<Home />} />
+        <Route path="/Portfolio/" element={<Home />} />
         <Route path="/text/:fileName" element={<TextViewer />} />
         <Route path="/pdf/:fileName" element={<PDFViewer />} />
         <Route path="/url/:fileName" element={<URLViewer />} />
