@@ -1,0 +1,39 @@
+@font-face{
+    font-family: daft;
+    src :url('./fonts/daft.TTF')
+  }
+
+  @font-face{
+    font-family: blur;
+    src :url('./fonts/blur.TTF')
+  }
+
+  @font-face{
+    font-family: batik;
+    src :url('./fonts/batik.TTF')
+  }
+
+  @font-face{
+    font-family: banco;
+    src :url('./fonts/banco.TTF')
+  }
+
+  @font-face{
+    font-family: windows;
+    src :url('./fonts/windows.TTF')
+  }
+
+  @font-face{
+    font-family: pixel;
+    src :url('./fonts/pixel.TTF')
+  }
+
+  @font-face{
+    font-family: pixel2;
+    src :url('./fonts/pixel2.TTF')
+  }
+
+  @font-face{
+    font-family: terminal;
+    src :url('./fonts/terminal.ttf')
+  }
