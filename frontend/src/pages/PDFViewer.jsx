@@ -1,12 +1,13 @@
-import React from 'react';
+
 import { Page, Text, View, Document, StyleSheet,PDFDownloadLink } from '@react-pdf/renderer';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router";
 import useSound from "use-sound"; // for handling the sound
 import click from "../sounds/click.mp3"
-
-
-
+import H1 from "../components/H1";
+import Button from "../components/Button";
+import ContentLayout from "../components/ContentLayout";
+import TextSection from '../components/TextSection';
 
 const styles = StyleSheet.create({
     page: {
@@ -47,11 +48,10 @@ const styles = StyleSheet.create({
 
 
 function PDFViewer() {
+  const {fileName} = useParams()
 
-    const {fileName} = useParams()
-
-const navigate = useNavigate();
-const [playEffect] = useSound(click, { volume: 0.2 });
+  const navigate = useNavigate();
+  const [playEffect] = useSound(click, { volume: 0.2 });
 
 
 const handleClick = () => {
@@ -60,33 +60,24 @@ const handleClick = () => {
 }
 
 return (
-    <div className="p-4 bg-black text-green-400 text-white border border-green-500 rounded-md  font-terminal sm:text-sm">
-      <h2 className="text-3xl font-bold mb-4 text-center text-blue">{fileName}</h2>
-     
+    <ContentLayout>
+      <H1>{fileName}</H1>
 
-      {/* <div className="bg-gray-900 border border-green-500 rounded-md p-4 mb-4">
-        <PDFViewer style={{ width: "100%", height: "600px" }}>
-          <PDFDocument fileName={fileName} />
-        </PDFViewer>
-      </div> */}
+{/* <h3 className='text-2xl mb-1 '>Previous Experience:</h3> */}
 
-<h3 className='text-2xl mb-1 '>Previous Experience:</h3>
-
-      <div className="text-2xl mb-4 leading-relaxed">
-       
-        {/* PDF Download Link */}
+      
+       <TextSection>
+         
         <PDFDownloadLink
           document={<PDFDocument fileName={fileName} />}
           fileName={`${fileName}.pdf`}
-          className="text-blue-400 underline hover:text-blue-200 leading-relaxed"
+          className="underline hover:text-link"
         >
           {({ loading }) => (loading ? "Generating PDF..." : "Download PDF")}
         </PDFDownloadLink>
-      </div>
-      <button className=" text-red text-3xl " onClick={handleClick}>
-        Back
-      </button>
-    </div>
+      </TextSection>
+      <Button onClick={handleClick}>Back</Button>
+      </ContentLayout>
   );
 }
 

@@ -7,13 +7,9 @@ export const Layout = (props) => {
   return (
    
    <>
-      
-      {/* <Navbar /> */}
-      
-    
-      <main className='p-4'>
+      <div className='p-6 bg-black w-full h-full'>
         {props.children}
-        </main>
+        </div>
         </>
     
   

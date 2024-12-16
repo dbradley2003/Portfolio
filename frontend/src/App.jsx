@@ -28,9 +28,9 @@ function App() {
 
       <Routes>
         <Route path="/Portfolio/" element={<Home />} />
-        <Route path="/text/:fileName" element={<TextViewer />} />
-        <Route path="/pdf/:fileName" element={<PDFViewer />} />
-        <Route path="/url/:fileName" element={<URLViewer />} />
+        <Route path="/Portfolio/text/:fileName" element={<TextViewer />} />
+        <Route path="/Portfolio/pdf/:fileName" element={<PDFViewer />} />
+        <Route path="/Portfolio/url/:fileName" element={<URLViewer />} />
 
       </Routes>
   

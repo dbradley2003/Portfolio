@@ -33,6 +33,7 @@ export default {
         yellow: '#fde74e',
         gray: '#D4D2C8',
         red: '#ca1f27',
+        link: '#3b82f6'
       },
       fontFamily: {
         daft: ['daft', 'sans-serif'],

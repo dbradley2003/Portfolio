@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router";
 import useSound from "use-sound"; // for handling the sound
 import click from "../sounds/click.mp3"
-
-
+import H1 from "../components/H1";
+import Button from "../components/Button";
+import ContentLayout from "../components/ContentLayout";
+import TextSection from "../components/TextSection";
 function URLViewer() {
     const {fileName} = useParams()
     const navigate = useNavigate();
@@ -24,17 +26,17 @@ function URLViewer() {
 
 
     return (
-        <div className="p-4 bg-black text-green-400 text-white border border-green-500 rounded-md font-terminal sm:text-sm">
-        <h2 className="text-4xl text-center  font-bold mb-8 text-white">{fileName}</h2>
+        <ContentLayout>
+        <H1>{fileName}</H1>
         
         
-         <div className=" text-blue mb-4 text-2xl">
+         <TextSection>
           {fileContents[fileName].startsWith("https") && (
           <a
             href={fileContents[fileName]}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-blue-200 "
+            className="underline hover:text-link"
           >
            
             {fileContents[fileName]}
@@ -44,14 +46,12 @@ function URLViewer() {
         )}
         
         
-        </div>
+        </TextSection>
        
-        <button className="text-3xl text-red" onClick={handleClick}> 
-        Back
-        </button>
+      <Button onClick={handleClick}>Back</Button>
        
         
-        </div>
+        </ContentLayout>
        
 )
 }
