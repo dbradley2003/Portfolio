@@ -109,7 +109,7 @@ return (
  
 <>
     
-          <table className="font-terminal text-green table-auto border w-full  ">
+          <table className="font-terminal text-green table-auto border w-3/4  ">
             <thead>
               <tr className=" bg-black text-xs lg:text-3xl ">
                 <TH className="w-2/6">Name</TH>
@@ -160,7 +160,7 @@ return (
 
   </tbody>
   </table>
-  <div className="mt-5 lg:pl-4 bg-gray-900 text-2xl w-100">
+  <div className="lg:pl-4 bg-gray-900 text-2xl w-1/4">
       {currentView}
     </div>
   </>
