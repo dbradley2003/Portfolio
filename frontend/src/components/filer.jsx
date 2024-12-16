@@ -9,12 +9,14 @@ import hover from "../sounds/hoverclick.mp3"
 import click from "../sounds/click.mp3"
 import throttle from "lodash/throttle";
 import TH from "./TH"
+import DefaultView from "../components/DefaultView";
 function FileExplorer() {
 
 const [currentFolder, setCurrentFolder] = useState("root");
-const [currentView, setCurrentView] = useState(null);
+const [currentView, setCurrentView] = useState(<DefaultView />);
 const soundUrl = hover
 const clickurl = click
+const [viewType, setViewType] = useState("default");
 const navigate = useNavigate();
 const [selectedFile, setSelectedFile] = useState(null);
 
@@ -33,6 +35,8 @@ const handleMouseEnter = () => {
 const handleBack = () => {
   playEffect()
   setCurrentFolder("root")
+  setCurrentView(<DefaultView />);
+  setViewType("default");
 }
 
 const folders = {
@@ -67,16 +71,21 @@ useEffect(() => {
 
 const handleFileOrFolderClick = (item) => {
   playEffect()
-if (item.name === "MusicPlayer.exe" && currentView != null ){
-  setCurrentView(null);
+
+if (item.name === "MusicPlayer.exe" && viewType !== "default"){
+  setCurrentView(<DefaultView />);
+  setViewType("default");
+ 
 }
 
-else if (item.name == "MusicPlayer.exe"){
+ else if (item.name == "MusicPlayer.exe"){
   setCurrentView(<MusicPlayer />)
+  setViewType("music")
 }
 else if(item.type == "folder"){
 setCurrentFolder(item.name)
-setCurrentView(null)
+setViewType("default");
+setCurrentView(<DefaultView />);
 }
 else if (item.type == "file"){
   const fileType = item.name.split(".").pop()
@@ -98,7 +107,7 @@ else if (item.type == "file"){
 
 return (
  
-
+<>
     
           <table className="font-terminal text-green table-auto border w-full  ">
             <thead>
@@ -151,7 +160,10 @@ return (
 
   </tbody>
   </table>
- 
+  <div className="mt-5 lg:pl-4 bg-gray-900 text-2xl w-100">
+      {currentView}
+    </div>
+  </>
  
 
 );

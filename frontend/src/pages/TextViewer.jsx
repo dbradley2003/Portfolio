@@ -15,26 +15,42 @@ function TextViewer() {
     
     const fileContents = {
   'About.txt': `Hi,
-I'm a third year student at <b>DePaul University</b>, studying computer science. I have experience building full stack web 
-applications and mostly use <b>Django/React</b> as my framework. I currently work remotely as a web developer for a nonprofit in San Jose called 
-<b>Hunger at Home</b>. I am always learning and applying myself into this field because the future for technology excites me and anticipate 
-the future world we might all live in one day (if AI doesn't end our species). Anyways, this is my first ever Hack a thon with codex and 
-am excited to share my portfolio, especially since I probably needed to build one at some point anyways.
+I’m a third-year Computer Science student at DePaul University. My experience primarily lies in building full-stack solutions using Django 
+for the backend and React for the frontend.
+
+Currently, I work remotely as a web developer for the nonprofit organization Hunger at Home in San Jose, where I help develop tools to 
+streamline operations and make a difference in the community.
+
+Technology excites me because of its limitless potential to shape the future. I’m constantly learning and evolving in this field.
+
+This is my first hackathon with Codex, and I’m thrilled to showcase my portfolio—a project I’ve been meaning to tackle for a while. 
+I can’t wait to connect, collaborate, and grow through this experience!
 `,
-"TeamUpNow.txt": `TeamUp:
+"TeamUpNow.txt": `<b>TeamUp:</b>
 A real-time collaboration platform for film students
 
-Overview:
-TeamUp is a startup I've been developing to help connect film students with other film students to collaborate and work on projects. Many film projects 
-require a substantial amount of different roles such as actors, audio, equipment, etc. and I've witnessed that the current tools for connecting with people 
-with specific skillsets are inactive and subpar. Not to mention, this addresses the issue for commuter students, who may not neccesarily have the same 
-opportunity to form their clique and either find projects to work on or find people to help them.
+Overview: 
+TeamUp is a startup I've been developing to help connect film students with other film students to collaborate and work on projects. 
+Many film projects require a substantial amount of different roles such as actors, audio, equipment, etc. and I've witnessed that the current 
+tools for connecting with people with specific skillsets are inactive and subpar. Not to mention, this addresses the issue for commuter students, 
+who may not neccesarily have the same opportunity to form their clique and either find projects to work on or find people to help them.
 
-Technologies Used:
-* Stack - My stack is Django the backend, React for the frontend, and PostgreSQL for the database. 
-* Deployment - I deployed the app using AWS and setup a CD pipeline with Docker and GitHub Actions
-* Other tools - websockets for real-time notifications, Azure/msal-react for SSO integration with Microsoft 
-Visit <a href="https://teamupnow.org" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline;">TeamUpNow</a> for more information.
+Technologies Used
+Tech Stack:
+Backend: Django
+Frontend: React
+Database: PostgreSQL
+
+Deployment:
+Hosted on AWS, with a CI/CD pipeline leveraging Docker and GitHub Actions for seamless deployment.
+
+Other Features:
+Websockets for real-time notifications, ensuring instant communication between users.
+SSO Integration with Microsoft using Azure/MSAL-React for a streamlined and secure login experience.
+
+Learn More
+Visit  <a href="https://teamupnow.org" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline;">TeamUpNow</a> to explore the platform 
+
 `,
 'Email.txt': `<strong>Personal Email:</strong>
 dombradley2003@gmail.com
