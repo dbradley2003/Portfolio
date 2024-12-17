@@ -23,9 +23,9 @@ const [viewType, setViewType] = useState("default");
 const navigate = useNavigate();
 const [selectedFile, setSelectedFile] = useState(null);
 
-const [playHover] = useSound(hover,{preload:true,volume: 0.2,})
+const [playHover] = useSound(hover,{preload:true,volume: 0.075,})
 
-const [playEffect] = useSound(click, { volume: 0.2 });
+const [playEffect] = useSound(click, {preload:true, volume: 0.08 });
 
 const throttledPlay = throttle(() => {
   playHover();
@@ -112,9 +112,9 @@ return (
  
 // {/* <div className="flex flex-col w-full h-full "> */}
 
-<section className="grid grid-cols-1 md:grid-cols-3 h-full w-full ">
+<section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 h-full w-full ">
 
-<div className="md:col-span-2 flex flex-col h-full w-full">
+<div className=" md:col-span-2 lg:col-span-3 flex flex-col h-full w-full">
  {/* wraps file explorer and topbar */}
 <div className="bg-gray font-inter text-black flex items-center px-2 py-2  shadow-md   ">
   <div className="flex gap-2">
@@ -125,8 +125,8 @@ return (
   <span className="ml-4 text-sm">File Explorer - /{currentFolder}</span>
 </div>
 
-    <div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden">
-          <table className=" bg-secondary  font-inter text-dodgerblue table-auto border text-left shadow-md w-full   ">
+    <div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden ">
+          <table className=" bg-secondary  font-inter text-dodgerblue table-auto border text-left shadow-md w-full">
             <thead>
               <tr className=" text-xs lg:text-xl">
                 <TH className="w-2/6 px-2">Name</TH>
@@ -148,7 +148,7 @@ return (
       {folders[currentFolder]?.map((item, index) => (
         <tr
                 key={index}
-                className={`cursor-pointer hover:scale `}
+                className={`cursor-pointer md:hover hover:scale `}
                 onClick={() => handleFileOrFolderClick(item)}
                 onMouseEnter={handleMouseEnter}
               >
@@ -181,8 +181,9 @@ return (
   </table>
   </div>
   </div>
+
   
-  <div className=" grid-2 pl-0 mt-5 md:mt-0 md:pl-6 items-center ">
+  <div className="order-first md:order-last pl-0 mb-5 md:mt-0 md:pl-6 items-center ">
       {currentView}
     </div>
 

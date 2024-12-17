@@ -13,7 +13,7 @@ function MusicPlayer(){
 
 const [isPlaying, setIsPlaying] = useState(false);
 
-const [play, { pause, duration, sound }] = useSound(daft,{volume:0.2});
+const [play, { pause, duration, sound }] = useSound(daft,{preload:true, volume:0.05});
 const artist = useState('')
 const songname = useState('One More Time by Daft Punk')
 

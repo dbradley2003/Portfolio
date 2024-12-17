@@ -25,7 +25,7 @@ return (
  
  
     
-<div className="flex flex-col lg:flex-row mt-4 md:mt-16"  >
+<div className="flex flex-col lg:flex-row mt-10 md:mt-16">
   
 <FileExplorer />
   

@@ -10,7 +10,7 @@ import TextSection from "../components/TextSection";
 function URLViewer() {
     const {fileName} = useParams()
     const navigate = useNavigate();
-    const [playEffect] = useSound(click, { volume: 0.2 });
+     const [playEffect] = useSound(click, { volume: 0.08 });
 
    
     const fileContents = {
