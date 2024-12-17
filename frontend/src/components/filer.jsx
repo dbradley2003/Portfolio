@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { BsCircleFill } from "react-icons/bs";
-import useSound from "use-sound"; // for handling the sound
-import daft from "../assets/daft.mp3"; 
-import Riptide from "../assets/Riptide.mp3"; 
+import useSound from "use-sound"; // for handling the sound 
 import MusicPlayer from "./musicplayer";
 import hover from "../sounds/hoverclick.mp3"
 import click from "../sounds/click.mp3"
@@ -12,19 +10,21 @@ import TH from "./TH"
 import DefaultView from "../components/DefaultView";
 import { FaFolder, FaFileAlt } from "react-icons/fa";
 import "../style/filer.css";
+import Draggable from "react-draggable"; // Import Draggable
 
 function FileExplorer() {
 
-const [currentFolder, setCurrentFolder] = useState("root");
-const [currentView, setCurrentView] = useState(<DefaultView />);
+const navigate = useNavigate();
+
+const defaultComponent = <DefaultView onClose={() => setCurrentView(null)} />;
 const soundUrl = hover
 const clickurl = click
+
+const [currentFolder, setCurrentFolder] = useState("root");
+const [currentView, setCurrentView] = useState(defaultComponent);
 const [viewType, setViewType] = useState("default");
-const navigate = useNavigate();
-const [selectedFile, setSelectedFile] = useState(null);
 
 const [playHover] = useSound(hover,{preload:true,volume: 0.075,})
-
 const [playEffect] = useSound(click, {preload:true, volume: 0.08 });
 
 const throttledPlay = throttle(() => {
@@ -38,7 +38,7 @@ const handleMouseEnter = () => {
 const handleBack = () => {
   playEffect()
   setCurrentFolder("root")
-  setCurrentView(<DefaultView />);
+  setCurrentView(defaultComponent);
   setViewType("default");
 }
 
@@ -62,9 +62,6 @@ const folders = {
   ],
 };
 
-    
-
-
 useEffect(() => {
   // Save current folder and history to localStorage
   localStorage.setItem("currentFolder", currentFolder);
@@ -76,7 +73,7 @@ const handleFileOrFolderClick = (item) => {
   playEffect()
 
 if (item.name === "MusicPlayer.exe" && viewType !== "default"){
-  setCurrentView(<DefaultView />);
+  setCurrentView(defaultComponent);
   setViewType("default");
  
 }
@@ -88,7 +85,7 @@ if (item.name === "MusicPlayer.exe" && viewType !== "default"){
 else if(item.type == "folder"){
 setCurrentFolder(item.name)
 setViewType("default");
-setCurrentView(<DefaultView />);
+setCurrentView(defaultComponent);
 }
 else if (item.type == "file"){
   const fileType = item.name.split(".").pop()
@@ -109,85 +106,108 @@ else if (item.type == "file"){
 }
 
 return (
- 
-// {/* <div className="flex flex-col w-full h-full "> */}
+  
+<section 
+className={`mb-16 
+md:mb-0 
+grid 
+h-full
+grid-cols-1
+md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
+ `}>
+<Draggable className=".handle">
 
-<section className="mb-8 md:mb-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 h-full w-full ">
+  
+  <div 
+  className={`flex flex-col h-full  
+    ${currentView ? "md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
+  `}
+  >
+  
 
-<div className=" md:col-span-2 lg:col-span-3 flex flex-col h-full w-full">
- {/* wraps file explorer and topbar */}
-<div className="bg-gray font-inter text-black flex items-center px-2 py-2  shadow-md   ">
+<div className="bg-gray font-inter text-black flex items-center px-2 py-2  shadow-md rounded-t-md">   
   <div className="flex gap-2">
-    <BsCircleFill className="text-red" />
-    <BsCircleFill className="text-yellow" />
-    <BsCircleFill className="text-green" />
+    <BsCircleFill className="text-red-500" />
+    <BsCircleFill className="text-yellow-500" />
+    <BsCircleFill className="text-green-500" />
   </div>
   <span className="ml-4 text-xs md:text-sm ">File Explorer - /{currentFolder}</span>
 </div>
 
-    <div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden ">
-          <table className=" bg-secondary  font-inter text-dodgerblue table-auto border text-left shadow-md w-full">
-            <thead>
-              <tr className=" text-xs md:text-base lg:text-lg ">
-                <TH className="w-2/6 px-2">Name</TH>
-                <TH className="w-1/6 px-2">Size</TH>
-                <TH className="w-1/6 px-2">Type</TH>
-                <TH className="w-1/6 px-2">Modified</TH>
+<div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
+   
+
+  <table
+  className={`table-auto border text-left 
+    shadow-md bg-secondary font-inter text-dodgerblue text-left    
+    ${
+    currentView ? "w-full" : "md:w-screen mx-auto "
+  }`}
+>
+    <thead>
+      <tr className=" text-xs md:text-base lg:text-lg ">
+        <TH className="w-2/6 px-2">Name</TH>
+        <TH className="w-1/6 px-2">Size</TH>
+        <TH className="w-1/6 px-2">Type</TH>
+        <TH className="w-1/6 px-2">Modified</TH>
+            
+          </tr>
+        </thead>
+    <tbody className="text-sm md:text-base lg:text-xl ">
+    {currentFolder !== "root" && (
+  <tr className="cursor-pointer hover:bg-accent2" onClick={handleBack}>
+  <td colSpan={4} className=" px-2 border border-border1  border-2   text-left h-10">
+    {".."} (Back)
+  </td>
+</tr>
+    )}
+
+  {folders[currentFolder]?.map((item, index) => (
+    <tr
+            key={index}
+            className={`cursor-pointer md:hover hover:scale `}
+            onClick={() => handleFileOrFolderClick(item)}
+            onMouseEnter={handleMouseEnter}
+          >
+    <td className="border border-border2 border-2 align-middle h-20 lg:h-20 px-2 ">
+              <div className="inline-flex items-center  gap-2 ">
+                {item.type === "folder" ? (
+                  <FaFolder className="text-yellow-500 text-sm md:text-lg" />
+                ) : (
+
+                  <FaFileAlt className="text-blue-500 text-sm md:text-lg" />
                 
-              </tr>
-            </thead>
-        <tbody className="text-sm md:text-base lg:text-xl ">
-        {currentFolder !== "root" && (
-      <tr className="cursor-pointer hover:bg-accent2" onClick={handleBack}>
-      <td colSpan={4} className=" px-2 border border-border1  border-2   text-left h-10">
-        {".."} (Back)
-      </td>
+                )}
+                <span>{item.name}</span>
+              </div>
+            </td>
+            <td className="border border-border2 border-2 px-2 ">
+              {item.size}
+            </td>
+            <td className="border border-border2  border-2 px-2   ">
+              {item.type === "folder" ? "Folder" : item.name.split(".").pop()}
+            </td>
+            <td className=" border border-border2 border-2 px-2">
+              {item.modified}
+            </td>
+                
     </tr>
-        )}
-
-      {folders[currentFolder]?.map((item, index) => (
-        <tr
-                key={index}
-                className={`cursor-pointer md:hover hover:scale `}
-                onClick={() => handleFileOrFolderClick(item)}
-                onMouseEnter={handleMouseEnter}
-              >
-        <td className="border border-border2 border-2 align-middle h-20 lg:h-20 px-2 ">
-                  <div className="inline-flex items-center  gap-2 ">
-                    {item.type === "folder" ? (
-                      <FaFolder className="text-yellow text-sm md:text-lg" />
-                    ) : (
-
-                      <FaFileAlt className="text-sky-500 text-sm md:text-lg" />
-                    
-                    )}
-                    <span>{item.name}</span>
-                  </div>
-                </td>
-                <td className="border border-border2 border-2 px-2 ">
-                  {item.size}
-                </td>
-                <td className="border border-border2  border-2 px-2   ">
-                  {item.type === "folder" ? "Folder" : item.name.split(".").pop()}
-                </td>
-                <td className=" border border-border2 border-2 px-2">
-                  {item.modified}
-                </td>
-                
-        </tr>
-      ))}
+  ))}
 
   </tbody>
   </table>
   </div>
+  
   </div>
+  </Draggable>
 
-
-  <div className="order-first md:order-last pl-0 mb-5 md:mt-0 md:pl-6 items-center  ">
+  {currentView && (
+    <div className="md:col-span-1 lg:pl-12 text-2xl mt-10 lg:mt-0 flex justify-center items-center">
       {currentView}
     </div>
-  
+  )}
  </section>
+
 
 );
 }

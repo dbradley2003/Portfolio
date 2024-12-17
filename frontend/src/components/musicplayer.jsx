@@ -62,13 +62,13 @@ const playingButton = () => {
   }, [sound]);
 
   return (
-    <div className="p-4 bg-background text-dodgerblue border border-2 font-batik rounded-3xl  ">
+    <div className="p-4 bg-background text-dodgerblue border border-2 font-batik rounded-3xl w-80  ">
       <h2 className="text-xl md:text-2xl font-bold underline mb-4 text-center ">
       My Tunes
     </h2>
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-2">
       <img
-        className="rounded-lg border-4 border-accent w-40 h-40 shadow-md "
+        className="rounded-lg border-4 border-accent w-30 h-40 shadow-md "
         src="https://picsum.photos/200/200"
         alt="Music Cover"
       />
@@ -86,7 +86,7 @@ const playingButton = () => {
 
         {isPlaying ? (
           <button
-          className=" bg-gray text-dodgerblue font-bold text-lg px-4 py-2 rounded hover:bg-hover"
+          className=" bg-gray text-dodgerblue font-bold text-base px-3 py-2  rounded hover:bg-hover"
             onClick={playingButton}
           >
             Stop
@@ -94,7 +94,7 @@ const playingButton = () => {
           </button>
         ) : (
           <button
-            className="bg-gray text-lg text-dodgerblue f font-bold px-4 py-2 rounded hover:bg-hover"
+            className="bg-gray text-base text-dodgerblue f font-bold py-2 px-3  rounded hover:bg-hover"
             onClick={playingButton}
           >
             Play

@@ -70,12 +70,12 @@ export default {
   			
   			pink: '#ef58a0',
   			purple: '#8e2a8b',
-  			green: '#97bd4c',
+  		
   			neongreen: '#00FF7F',
   			cyan: '#00CED1',
-  			yellow: '#fde74e',
+  			
   			gray: '#D4D2C8',
-  			red: '#ca1f27',
+  			
   			link: '#3b82f6',
 			accent2: '#87CEEB',
   			background: 'hsl(var(--background))',
