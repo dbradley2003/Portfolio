@@ -37,3 +37,16 @@
     font-family: terminal;
     src :url('./fonts/terminal.ttf')
   }
+
+  @font-face{
+    font-family: apple;
+    src :url('./fonts/SF-Pro-Display-Black.otf')
+  }
+  @font-face{
+    font-family: appleMedium;
+    src :url('./fonts/SF-Pro-Display-Medium.otf')
+  }
+  @font-face{
+    font-family: inter;
+    src :url('./fonts/Inter-VariableFont_opsz\,wght.ttf')
+  }

@@ -1,0 +1,5 @@
+.hover\:scale:hover {
+    transform: scale(1.01);
+    background-color: #1e293b;
+    transition: transform 0.2s, background-color 0.3s;
+  }

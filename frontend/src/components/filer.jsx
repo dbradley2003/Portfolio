@@ -10,6 +10,9 @@ import click from "../sounds/click.mp3"
 import throttle from "lodash/throttle";
 import TH from "./TH"
 import DefaultView from "../components/DefaultView";
+import { FaFolder, FaFileAlt } from "react-icons/fa";
+import "../style/filer.css";
+
 function FileExplorer() {
 
 const [currentFolder, setCurrentFolder] = useState("root");
@@ -107,22 +110,36 @@ else if (item.type == "file"){
 
 return (
  
-<>
-    
-          <table className="font-terminal text-green table-auto border w-full lg:w-3/4  ">
+// {/* <div className="flex flex-col w-full h-full "> */}
+
+<section className="grid grid-cols-1 md:grid-cols-3 h-full w-full ">
+
+<div className="md:col-span-2 flex flex-col h-full w-full">
+ {/* wraps file explorer and topbar */}
+<div className="bg-gray font-inter text-black flex items-center px-2 py-2  shadow-md   ">
+  <div className="flex gap-2">
+    <BsCircleFill className="text-red" />
+    <BsCircleFill className="text-yellow" />
+    <BsCircleFill className="text-green" />
+  </div>
+  <span className="ml-4 text-sm">File Explorer - /{currentFolder}</span>
+</div>
+
+    <div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden">
+          <table className=" bg-secondary  font-inter text-dodgerblue table-auto border text-left shadow-md w-full   ">
             <thead>
-              <tr className=" bg-black text-xs lg:text-3xl ">
-                <TH className="w-2/6">Name</TH>
-                <TH className="w-1/6">Size</TH>
-                <TH className="w-1/6">Type</TH>
-                <TH className="w-1/6">Modified</TH>
+              <tr className=" text-xs lg:text-xl">
+                <TH className="w-2/6 px-2">Name</TH>
+                <TH className="w-1/6 px-2">Size</TH>
+                <TH className="w-1/6 px-2">Type</TH>
+                <TH className="w-1/6 px-2">Modified</TH>
                 
               </tr>
             </thead>
-        <tbody className=" bg-black text-xs lg:text-3xl ">
+        <tbody className="text-base md:text-xl ">
         {currentFolder !== "root" && (
-      <tr className="cursor-pointer hover:bg-gray" onClick={handleBack}>
-      <td colSpan={4} className=" px-2 border border-green border-2 text-left h-10">
+      <tr className="cursor-pointer hover:bg-accent2" onClick={handleBack}>
+      <td colSpan={4} className=" px-2 border border-border1  border-2   text-left h-10">
         {".."} (Back)
       </td>
     </tr>
@@ -131,27 +148,29 @@ return (
       {folders[currentFolder]?.map((item, index) => (
         <tr
                 key={index}
-                className={`cursor-pointer hover:bg-gray`}
+                className={`cursor-pointer hover:scale `}
                 onClick={() => handleFileOrFolderClick(item)}
                 onMouseEnter={handleMouseEnter}
               >
-        <td className="py-0 px-2 w-1/6 border border-green border-2 align-middle h-10 lg:h-20">
-                  <div className="inline-flex items-center gap-2 ">
+        <td className="border border-border2 border-2 align-middle h-20 lg:h-20 px-2 ">
+                  <div className="inline-flex items-center  gap-2 ">
                     {item.type === "folder" ? (
-                      <div className="text-base ">📁</div>
+                      <FaFolder className="text-yellow text-base md:text-lg" />
                     ) : (
-                      <BsCircleFill className="text-red text-xs" />
+
+                      <FaFileAlt className="text-sky-500 text-base md:text-lg" />
+                    
                     )}
                     <span>{item.name}</span>
                   </div>
                 </td>
-                <td className="py-0 px-2 border border-green border-2  ">
+                <td className="border border-border2 border-2 px-2 ">
                   {item.size}
                 </td>
-                <td className="py-0 px-2 border border-green border-2 ">
+                <td className="border border-border2  border-2 px-2   ">
                   {item.type === "folder" ? "Folder" : item.name.split(".").pop()}
                 </td>
-                <td className="py-0 px-2  border border-green border-2">
+                <td className=" border border-border2 border-2 px-2">
                   {item.modified}
                 </td>
                 
@@ -160,18 +179,15 @@ return (
 
   </tbody>
   </table>
-  <div className="lg:pl-4 bg-gray-900 text-2xl w-full lg:w-1/4 mt-10 lg:mt-0">
+  </div>
+  </div>
+  
+  <div className=" grid-2 pl-0 mt-5 md:mt-0 md:pl-6 items-center ">
       {currentView}
     </div>
-  </>
- 
+
+ </section>
 
 );
 }
 export default FileExplorer;
-
-
-{/* <div className="flex lg:flex-row text-green font-terminal h-screen"> */}
-  
-  {/* <div className=" w-full h-3/4"> */}
-    {/* Main Content */}

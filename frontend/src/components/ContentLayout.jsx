@@ -7,7 +7,7 @@ export default function ContentLayout({ children }) {
   className="flex flex-col 
   items-left justify-center 
   border border-white border-1 p-4 
-  font-terminal text-white gap-4 rounded-md bg-black
+  font-mono text-zinc-800 gap-6 rounded-md bg-white
   ">
 {children}
 </div>;

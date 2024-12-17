@@ -10,22 +10,23 @@ export default function Home() {
 
 
 return (
-<div className="flex flex-col p-5">
-<div className="flex mt-2 ">
+<div className="flex flex-col">
+<div className="flex mt-8  justify-center ">
   <h1
-  className=" underline text-purple font-bold font-terminal text-4xl lg:text-5xl text-left mb-4  animate-typing overflow-hidden whitespace-nowrap"
+  className=" underline text-blue-900 font-inter font-bold text-3xl md:text-4xl text-left mt-1  animate-typing overflow-hidden whitespace-nowrap"
   >
   Dominic's Portfolio
     
 </h1>
   {/* Stationary Blinking Cursor */}
-  <span className="animate-blink text-green mb-3 text-4xl lg:text-5xl">|</span>
+  <span className="animate-blink  text-4xl mb-4 lg:text-4xl">|</span>
 </div>
  
  
  
     
-<div className="flex flex-col lg:flex-row mt-10 ">
+<div className="flex flex-col lg:flex-row mt-4 md:mt-16"  >
+  
 <FileExplorer />
   
 </div>

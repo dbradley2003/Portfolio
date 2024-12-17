@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from './pages/home'
-import '../src/input.css';
-import '../src/app.css'
 import TextViewer from './pages/TextViewer';
 import { Layout } from './pages/Layout';
 import PDFViewer from './pages/PDFViewer';
 import URLViewer from './pages/URLViewer';
+
+
 function App() {
   
   return (

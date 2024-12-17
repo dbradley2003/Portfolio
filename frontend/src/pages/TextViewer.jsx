@@ -14,7 +14,9 @@ function TextViewer() {
 
     
     const fileContents = {
-  'About.txt': `Hi,
+  'About.txt': 
+  `Hi, I’m Dominic Bradley!
+
 I’m a third-year Computer Science student at DePaul University. My experience primarily lies in building full-stack solutions using Django 
 for the backend and React for the frontend.
 

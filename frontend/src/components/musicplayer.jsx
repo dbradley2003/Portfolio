@@ -62,31 +62,31 @@ const playingButton = () => {
   }, [sound]);
 
   return (
-    <div className="p-4 bg-black text-pink border border-2 font-windows rounded-3xl  ">
-      <h2 className="text-3xl mb-4 text-center glow-green">
+    <div className="p-4 bg-background text-dodgerblue border border-2 font-batik rounded-3xl  ">
+      <h2 className="text-3xl font-bold underline mb-4 text-center ">
       My Tunes
     </h2>
       <div className="flex flex-col items-center space-y-4">
       <img
-        className="rounded-lg border-4 border-green-500 w-40 h-40 shadow-md shadow-green-400"
+        className="rounded-lg border-4 border-accent w-40 h-40 shadow-md "
         src="https://picsum.photos/200/200"
         alt="Music Cover"
       />
-      <div className="text-center text-xl font-bold glow-pink">
+      <div className="text-center text-lg font-bold">
         Now Playing: "One More Time"
       </div>
     </div>
      
 
-      <div className="flex justify-around items-center">
-        <button className="hover:scale-110 transform transition">
-          <BiSkipPrevious size="3em" className="text-green-400" />
+      <div className="flex justify-around items-center text-gray ">
+      <button className="hover:scale-110 transform transition ">
+          <BiSkipPrevious size="3em" className="text-xl" />
         </button>
 
 
         {isPlaying ? (
           <button
-          className="bg-400 bg-pink text-white px-4 py-2 rounded hover:bg-green-500"
+          className=" bg-gray text-dodgerblue font-bold text-lg px-4 py-2 rounded hover:bg-hover"
             onClick={playingButton}
           >
             Stop
@@ -94,7 +94,7 @@ const playingButton = () => {
           </button>
         ) : (
           <button
-            className="bg-400 bg-pink text-white px-4 py-2 rounded hover:bg-green-500"
+            className="bg-gray text-lg text-dodgerblue f font-bold px-4 py-2 rounded hover:bg-hover"
             onClick={playingButton}
           >
             Play
@@ -102,11 +102,11 @@ const playingButton = () => {
           </button>
         )}
         
-        <button className="hover:scale-110 transform transition">
-          <BiSkipNext size="3em" className="text-green-400" />
+        <button className="hover:scale-110 transform transition ">
+          <BiSkipNext size="3em" className="text-xl" />
         </button>
         <div>
-        <div className="time">
+        <div className="time text-sm pr-4">
           <p>
             {currTime.min}:{currTime.sec}
           </p>

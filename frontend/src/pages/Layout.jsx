@@ -7,7 +7,7 @@ export const Layout = (props) => {
   return (
    
    <>
-      <div className='p-6 bg-black w-full h-full'>
+      <div className='py-6 px-3 md:px-8 bg-white w-full h-screen'>
         {props.children}
         </div>
         </>
