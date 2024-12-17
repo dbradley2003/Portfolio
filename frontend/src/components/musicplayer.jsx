@@ -63,7 +63,7 @@ const playingButton = () => {
 
   return (
     <div className="p-4 bg-background text-dodgerblue border border-2 font-batik rounded-3xl  ">
-      <h2 className="text-3xl font-bold underline mb-4 text-center ">
+      <h2 className="text-xl md:text-2xl font-bold underline mb-4 text-center ">
       My Tunes
     </h2>
       <div className="flex flex-col items-center space-y-4">

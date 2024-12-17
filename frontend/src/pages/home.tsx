@@ -11,15 +11,15 @@ export default function Home() {
 
 return (
 <div className="flex flex-col">
-<div className="flex mt-8  justify-center ">
+<div className="flex mt-8  justify-center">
   <h1
-  className=" underline text-blue-900 font-inter font-bold text-3xl md:text-4xl text-left mt-1  animate-typing overflow-hidden whitespace-nowrap"
+  className=" text-blue-800  font-inter font-bold text-3xl md:text-4xl text-left animate-typing  overflow-hidden whitespace-nowrap"
   >
   Dominic's Portfolio
     
 </h1>
   {/* Stationary Blinking Cursor */}
-  <span className="animate-blink  text-4xl mb-4 lg:text-4xl">|</span>
+  <span className="animate-blink  font-inter font-bold text-blue-800 text-3xl mt-0.5  md:text-4xl whitespace-nowrap">|</span>
 </div>
  
  

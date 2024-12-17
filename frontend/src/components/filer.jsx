@@ -112,7 +112,7 @@ return (
  
 // {/* <div className="flex flex-col w-full h-full "> */}
 
-<section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 h-full w-full ">
+<section className="mb-8 md:mb-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 h-full w-full ">
 
 <div className=" md:col-span-2 lg:col-span-3 flex flex-col h-full w-full">
  {/* wraps file explorer and topbar */}
@@ -122,13 +122,13 @@ return (
     <BsCircleFill className="text-yellow" />
     <BsCircleFill className="text-green" />
   </div>
-  <span className="ml-4 text-sm">File Explorer - /{currentFolder}</span>
+  <span className="ml-4 text-xs md:text-sm ">File Explorer - /{currentFolder}</span>
 </div>
 
     <div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden ">
           <table className=" bg-secondary  font-inter text-dodgerblue table-auto border text-left shadow-md w-full">
             <thead>
-              <tr className=" text-xs lg:text-xl">
+              <tr className=" text-xs md:text-base lg:text-lg ">
                 <TH className="w-2/6 px-2">Name</TH>
                 <TH className="w-1/6 px-2">Size</TH>
                 <TH className="w-1/6 px-2">Type</TH>
@@ -136,7 +136,7 @@ return (
                 
               </tr>
             </thead>
-        <tbody className="text-base md:text-xl ">
+        <tbody className="text-sm md:text-base lg:text-xl ">
         {currentFolder !== "root" && (
       <tr className="cursor-pointer hover:bg-accent2" onClick={handleBack}>
       <td colSpan={4} className=" px-2 border border-border1  border-2   text-left h-10">
@@ -155,10 +155,10 @@ return (
         <td className="border border-border2 border-2 align-middle h-20 lg:h-20 px-2 ">
                   <div className="inline-flex items-center  gap-2 ">
                     {item.type === "folder" ? (
-                      <FaFolder className="text-yellow text-base md:text-lg" />
+                      <FaFolder className="text-yellow text-sm md:text-lg" />
                     ) : (
 
-                      <FaFileAlt className="text-sky-500 text-base md:text-lg" />
+                      <FaFileAlt className="text-sky-500 text-sm md:text-lg" />
                     
                     )}
                     <span>{item.name}</span>
@@ -182,11 +182,11 @@ return (
   </div>
   </div>
 
-  
-  <div className="order-first md:order-last pl-0 mb-5 md:mt-0 md:pl-6 items-center ">
+
+  <div className="order-first md:order-last pl-0 mb-5 md:mt-0 md:pl-6 items-center  ">
       {currentView}
     </div>
-
+  
  </section>
 
 );
