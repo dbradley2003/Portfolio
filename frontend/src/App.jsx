@@ -10,13 +10,16 @@ import URLViewer from './pages/URLViewer';
 function App() {
   
   return (
-       
+      
        
     
+      
+  
       <Layout>
             <Pages />          
       </Layout>
-    
+     
+      
   
     )
   }
