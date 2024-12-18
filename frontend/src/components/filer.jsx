@@ -114,7 +114,8 @@ className={`mb-16
 md:mb-0 
 grid 
 h-full
-grid-cols-1
+grid-cols-full
+
 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
  `}>
 
@@ -124,12 +125,12 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   
   <div 
   className={`flex flex-col h-full  
-    ${currentView ? "md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
+    ${currentView ? " md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
   `}
   >
   
 
-<div className="bg-gray font-inter text-black flex items-center px-2 py-2  shadow-md rounded-t-md">   
+<div className="bg-gray font-inter text-black flex items-center px-2 py-2  shadow-md rounded-t-md ">   
   <div className="flex gap-2">
     <BsCircleFill className="text-red-500" />
     <BsCircleFill className="text-yellow-500" />
@@ -138,7 +139,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   <span className="ml-4 text-xs md:text-sm ">File Explorer - /{currentFolder}</span>
 </div>
 
-<div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
+<div className="flex-1  overflow-auto sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
    
 
   <table
