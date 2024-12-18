@@ -12,7 +12,7 @@ const FolderContext = createContext();
     const navigateToFolder = (folder ) => {
         setFolderHistory((prevHistory) => [...prevHistory, currentFolder]);
         setCurrentFolder(folder)
-        console.log(currentFolder)
+   
     }
 
     const navigateBack = () => {

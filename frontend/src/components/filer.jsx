@@ -13,19 +13,21 @@ import "../style/filer.css";
 import Draggable from "react-draggable"; // Import Draggable
 import { useMediaQuery } from "react-responsive";
 import FolderContext from "./FolderContext";
-
+import ViewContext from "./ViewContext";
 
 function FileExplorer() {
 
 const navigate = useNavigate();
+const musicComponent = <MusicPlayer /> 
+const defaultComponent = <DefaultView />;
 
-const defaultComponent = <DefaultView onClose={() => setCurrentView(null)} />;
 const soundUrl = hover
 const clickurl = click
 
 const {currentFolder, navigateToFolder, navigateBack} = useContext(FolderContext)
-const [currentView, setCurrentView] = useState(defaultComponent);
+const {currentView, setCurrentView, getCurrentViewComponent} = useContext(ViewContext)
 const [viewType, setViewType] = useState("default");
+
 
 const [playHover] = useSound(hover,{preload:true,volume: 0.075,})
 const [playEffect] = useSound(click, {preload:true, volume: 0.08 });
@@ -38,12 +40,13 @@ const handleMouseEnter = () => {
   throttledPlay();
 };
 
-const handleBack = () => {
-  playEffect()
-  setCurrentFolder("root")
-  setCurrentView(defaultComponent);
-  setViewType("default");
-}
+// const handleBack = () => {
+//   playEffect()
+//   setCurrentFolder("root")
+//   setCurrentView(defaultComponent);
+//   setViewType("default");
+// }
+
 const isLgScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
 const folders = {
@@ -68,6 +71,7 @@ const folders = {
   ],
 };
 
+
 useEffect(() => {
   // Save current folder and history to localStorage
   localStorage.setItem("currentFolder", currentFolder);
@@ -78,21 +82,19 @@ useEffect(() => {
 const handleFileOrFolderClick = (item) => {
   playEffect()
 
-if (item.name === "MusicPlayer.exe" && viewType !== "default"){
-  setCurrentView(defaultComponent);
-  setViewType("default");
- 
+if (item.name === "MusicPlayer.exe" && currentView === "musicPlayer"){
+setViewType("default");
+setCurrentView('default')
 }
 
- else if (item.name == "MusicPlayer.exe"){
-  setCurrentView(<MusicPlayer />)
-  setViewType("music")
+else if (item.name == "MusicPlayer.exe"){
+setCurrentView("musicPlayer")
 }
 else if(item.type == "folder"){
 navigateToFolder(item.name)
 console.log(currentFolder)
-setViewType("default");
-setCurrentView(defaultComponent);
+
+
 }
 else if (item.type == "file"){
   const fileType = item.name.split(".").pop()
@@ -213,7 +215,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
 
   {currentView && (
     <div className="md:col-span-1 lg:pl-12 text-2xl mt-10 lg:mt-0 flex justify-center items-center">
-      {currentView}
+      {getCurrentViewComponent()}
     </div>
   )}
  </section>

@@ -6,19 +6,21 @@ import { Layout } from './pages/Layout';
 import PDFViewer from './pages/PDFViewer';
 import URLViewer from './pages/URLViewer';
 import  {FolderProvider}   from './components/FolderContext';
-
+import { ViewProvider } from './components/ViewContext';
 
 function App() {
   
   return (
 
-    
+   
       <Layout>
+        <ViewProvider>
         <FolderProvider>
             <Pages /> 
-            </FolderProvider>         
+            </FolderProvider> 
+            </ViewProvider>     
       </Layout>
-
+      
     )
   }
 
