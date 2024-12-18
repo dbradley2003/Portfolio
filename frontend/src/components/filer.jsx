@@ -11,6 +11,7 @@ import DefaultView from "../components/DefaultView";
 import { FaFolder, FaFileAlt } from "react-icons/fa";
 import "../style/filer.css";
 import Draggable from "react-draggable"; // Import Draggable
+import { useMediaQuery } from "react-responsive";
 
 function FileExplorer() {
 
@@ -41,6 +42,7 @@ const handleBack = () => {
   setCurrentView(defaultComponent);
   setViewType("default");
 }
+const isLgScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
 const folders = {
 
@@ -115,7 +117,9 @@ h-full
 grid-cols-1
 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
  `}>
-<Draggable className=".handle">
+
+
+{/* <Draggable className=".handle"> */}
 
   
   <div 
@@ -199,7 +203,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   </div>
   
   </div>
-  </Draggable>
+  {/* </Draggable> */}
 
   {currentView && (
     <div className="md:col-span-1 lg:pl-12 text-2xl mt-10 lg:mt-0 flex justify-center items-center">
