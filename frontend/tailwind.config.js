@@ -4,6 +4,9 @@ import tailwindcssAnimate from "tailwindcss-animate";
 export default {
     darkMode: ["class"],
     content: ["./src/**/*.{js,ts,jsx,tsx}"],
+	future: {
+		hoverOnlyWhenSupported: true, // 👈 enable hover only when supported
+	  },
   theme: {
 	screens: {
 		'sm': '640px',

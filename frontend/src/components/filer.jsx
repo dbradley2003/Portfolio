@@ -120,7 +120,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
  `}>
 
 
-{/* <Draggable className=".handle"> */}
+<Draggable cancel="tr" className=".handle">
 
   
   <div 
@@ -160,7 +160,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
         </thead>
     <tbody className="text-sm md:text-base lg:text-xl ">
     {currentFolder !== "root" && (
-  <tr className="cursor-pointer hover:bg-accent2" onClick={handleBack}>
+  <tr className="hover:none cursor-pointer md:hover:bg-accent2" onClick={handleBack}>
   <td colSpan={4} className=" px-2 border border-border1  border-2   text-left h-10">
     {".."} (Back)
   </td>
@@ -204,7 +204,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   </div>
   
   </div>
-  {/* </Draggable> */}
+  </Draggable>
 
   {currentView && (
     <div className="md:col-span-1 lg:pl-12 text-2xl mt-10 lg:mt-0 flex justify-center items-center">
