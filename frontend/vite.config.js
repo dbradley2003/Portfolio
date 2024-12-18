@@ -7,8 +7,9 @@ export default defineConfig({
   base: '/Portfolio/', // The name of your GitHub repository
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-  }
+      "@": path.resolve(__dirname, "./src"), 
+  },
+  extensions: ['.js', '.jsx', '.ts', '.tsx'], // Ensure these extensions are included
 }
 });
 

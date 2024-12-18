@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
 import { BsCircleFill } from "react-icons/bs";
 import useSound from "use-sound"; // for handling the sound 
@@ -12,6 +12,8 @@ import { FaFolder, FaFileAlt } from "react-icons/fa";
 import "../style/filer.css";
 import Draggable from "react-draggable"; // Import Draggable
 import { useMediaQuery } from "react-responsive";
+import FolderContext from "./FolderContext";
+
 
 function FileExplorer() {
 
@@ -21,7 +23,7 @@ const defaultComponent = <DefaultView onClose={() => setCurrentView(null)} />;
 const soundUrl = hover
 const clickurl = click
 
-const [currentFolder, setCurrentFolder] = useState("root");
+const {currentFolder, navigateToFolder, navigateBack} = useContext(FolderContext)
 const [currentView, setCurrentView] = useState(defaultComponent);
 const [viewType, setViewType] = useState("default");
 
@@ -55,7 +57,9 @@ const folders = {
   ],
   Projects: [
     {name: "TeamUpNow.txt", type:"file", size:"3.4KB",modified:"2021-04-27"},
-    {name: "TradeAnalysis.txt", type:"file", size:"3.4KB",modified:"2024-12-15"}
+    {name: "TradeAnalysis.txt", type:"file", size:"3.4KB",modified:"2024-12-15"},
+    {name: "Portfolio.txt", type:"file", size:"3.4KB",modified:"2024-12-17"},
+    {name: "RaspberryPI.txt", type:"file", size:"3.4KB",modified:"2024-12-17"}
   ],
   Contact: [
     {name: "Email.txt", type:"file", size:"3.4KB",modified:"2024-12-15"},
@@ -85,7 +89,8 @@ if (item.name === "MusicPlayer.exe" && viewType !== "default"){
   setViewType("music")
 }
 else if(item.type == "folder"){
-setCurrentFolder(item.name)
+navigateToFolder(item.name)
+console.log(currentFolder)
 setViewType("default");
 setCurrentView(defaultComponent);
 }
@@ -120,7 +125,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
  `}>
 
 
-<Draggable cancel="tr" className=".handle">
+<Draggable cancel="tr">
 
   
   <div 
@@ -160,7 +165,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
         </thead>
     <tbody className="text-sm md:text-base lg:text-xl ">
     {currentFolder !== "root" && (
-  <tr className="hover:none cursor-pointer md:hover:bg-accent2" onClick={handleBack}>
+  <tr className="hover:none cursor-pointer md:hover:bg-accent2" onClick={navigateBack}>
   <td colSpan={4} className=" px-2 border border-border1  border-2   text-left h-10">
     {".."} (Back)
   </td>

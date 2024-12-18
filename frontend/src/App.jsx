@@ -5,22 +5,20 @@ import TextViewer from './pages/TextViewer';
 import { Layout } from './pages/Layout';
 import PDFViewer from './pages/PDFViewer';
 import URLViewer from './pages/URLViewer';
+import  {FolderProvider}   from './components/FolderContext';
 
 
 function App() {
   
   return (
-      
-       
+
     
-      
-  
       <Layout>
-            <Pages />          
+        <FolderProvider>
+            <Pages /> 
+            </FolderProvider>         
       </Layout>
-     
-      
-  
+
     )
   }
 

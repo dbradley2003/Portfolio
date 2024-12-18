@@ -59,9 +59,21 @@ dombradley2003@gmail.com
 <strong>School Email:</strong>
 dbradl17@depaul.edu
 `,
+
+
 "TradeAnalysis.txt": `
-...
-`
+
+`,
+
+
+"Portfolio.txt":`
+
+`,
+"RaspberryPI.txt":`
+
+`,
+
+
 }
     const handleClick = () => {
         playEffect()
