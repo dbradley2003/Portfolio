@@ -17,41 +17,34 @@ function TextViewer() {
   'About.txt': 
   `Hi, I’m Dominic Bradley!
 
-I’m a third-year Computer Science student at DePaul University. My experience primarily lies in building full-stack solutions using Django 
-for the backend and React for the frontend.
+I’m a third-year Computer Science student at DePaul University with a strong passion for creating innovative, user-focused web applications. My expertise lies in building robust full-stack solutions using Django for backend development and React for interactive, modern frontends.
 
-Currently, I work remotely as a web developer for the nonprofit organization Hunger at Home in San Jose, where I help develop tools to 
-streamline operations and make a difference in the community.
+Currently, I work as a web developer for Hunger at Home, a nonprofit organization based in San Jose. In this role, I develop tools that enhance operational efficiency and support impactful community services. My work allows me to combine technical skills with meaningful contributions to the community.
 
-Technology excites me because of its limitless potential to shape the future. I’m constantly learning and evolving in this field.
+Technology excites me because of its ability to transform ideas into impactful solutions. My experience building full-stack applications has allowed me to bring entrepreneurial projects to life, from real-time collaboration platforms to scalable web solutions. These skills have inspired me to explore new domains like finance and trading, where I aim to apply my knowledge to develop projects such as trading algorithms and data-driven tools that unlock new opportunities and insights.
 
-This is my first hackathon with Codex, and I’m thrilled to showcase my portfolio—a project I’ve been meaning to tackle for a while. 
-I can’t wait to connect, collaborate, and grow through this experience!
+Outside of work, I enjoy exploring new technologies, tackling challenging projects, and continuously expanding my knowledge in software development. I’m always eager to connect, collaborate, and build solutions that make a difference.
+
 `,
 "TeamUpNow.txt": `<b>TeamUp:</b>
-A real-time collaboration platform for film students
+<b>A Real-Time Collaboration Platform for Film Students</b>
 
-Overview: 
-TeamUp is a startup I've been developing to help connect film students with other film students to collaborate and work on projects. 
-Many film projects require a substantial amount of different roles such as actors, audio, equipment, etc. and I've witnessed that the current 
-tools for connecting with people with specific skillsets are inactive and subpar. Not to mention, this addresses the issue for commuter students, 
-who may not neccesarily have the same opportunity to form their clique and either find projects to work on or find people to help them.
+<b>Overview:</b>
+TeamUp is a startup I developed to connect film students with peers to collaborate on creative projects and build professional experience. The platform is designed to help students discover projects, showcase their skills, and connect with others to develop their portfolios and improve their chances of securing jobs in the competitive film industry. By bridging gaps in communication and collaboration, TeamUp fosters a professional network that supports students' career growth.
 
-Technologies Used
-Tech Stack:
-Backend: Django
-Frontend: React
-Database: PostgreSQL
+<b>Technologies Used:</b>
 
-Deployment:
-Hosted on AWS, with a CI/CD pipeline leveraging Docker and GitHub Actions for seamless deployment.
+<b>Tech Stack:</b>
 
-Other Features:
-Websockets for real-time notifications, ensuring instant communication between users.
-SSO Integration with Microsoft using Azure/MSAL-React for a streamlined and secure login experience.
+<ul> <li><b>Backend:</b> Django, providing a robust framework for scalable and secure backend development.</li> <li><b>Frontend:</b> React, delivering a responsive, interactive, and user-friendly interface.</li> <li><b>Database:</b> PostgreSQL, chosen for its ability to efficiently handle relational data and scale with user demands.</li> </ul>
+<b>Deployment:</b>
 
-Learn More
-Visit  <a href="https://teamupnow.org" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline;">TeamUpNow</a> to explore the platform 
+<ul> <li>Hosted on <b>AWS</b>, leveraging its scalable cloud infrastructure for optimal performance.</li> <li>Implemented a <b>CI/CD pipeline</b> using Docker and GitHub Actions to automate seamless deployment processes.</li> </ul>
+<b>Key Features:</b>
+
+<ul> <li><b>Real-Time Notifications:</b> Built with WebSockets to enable instant updates and enhance collaboration between users.</li> <li><b>SSO Integration:</b> Secure login experience through Microsoft Azure using MSAL-React.</li> </ul>
+<b>Learn More:</b>
+Visit <a href="https://teamupnow.org" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline;">TeamUpNow</a> to explore the platform and see how it empowers film students to collaborate, create, and advance their careers.
 
 `,
 'Email.txt': `<strong>Personal Email:</strong>
@@ -62,6 +55,18 @@ dbradl17@depaul.edu
 
 
 "TradeAnalysis.txt": `
+<b>Trading Simulation Tool: </b>
+<b>A Predictive Trading Platform for Smarter Decision-Making</b>
+
+<b>Overview:</b>
+This project was developed as part of the Northern Trust x DePaul Competition to create a simulation platform for foreign exchange trading. The goal was to empower users to simulate trades, manage portfolios, and exchange assets in a controlled environment, helping them make smarter trading decisions through data-driven insights. The platform combines predictive analytics, intuitive dashboards, and a user-friendly interface to provide a comprehensive trading experience.
+
+<b>Technologies Used:</b>
+
+<ul> <li><b>Backend:</b> Python and Django, used to create a scalable backend infrastructure for simulating trades and managing user portfolios.</li> <li><b>Database:</b> PostgreSQL, ensuring efficient handling and storage of user portfolios, transaction data, and market trends.</li> <li><b>Predictive Analytics:</b> LSTM models were integrated to analyze historical market data and forecast future trends for smarter trading decisions.</li> <li><b>Frontend:</b> React, HTML5, CSS3, delivering an interactive and user-friendly interface.</li> <li><b>API Integration:</b> Leveraged APIs to fetch real-time market data and ensure up-to-date simulations.</li> </ul>
+<b>Key Features:</b>
+
+<ul> <li><b>Portfolio Management:</b> Allows users to create and manage virtual portfolios, providing insights into performance and risk.</li> <li><b>Trade Simulation:</b> Enables users to simulate trades and exchange assets in a controlled environment to test strategies.</li> <li><b>Predictive Analytics:</b> Incorporates LSTM models to forecast market trends and improve trading decisions.</li> <li><b>Data Visualization:</b> Dynamic dashboards visualize market trends, trade performance, and portfolio summaries, offering actionable insights.</li> </ul>
 
 `,
 
