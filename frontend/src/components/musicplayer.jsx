@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react"; 
-import useSound from "use-sound"; // for handling the sound
-// import qala from "../assets/qala.mp3"; // importing the music
-import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai"; // icons for play and pause
+import { useEffect, useState,useRef } from "react"; 
+import useSound from "use-sound"; 
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi"; 
-import { IconContext } from "react-icons"; // for customazing the icons
 import daft from "../assets/daft.mp3"; 
 import "../style/player.css"
 
 
 
 function MusicPlayer(){
-
+const audioRef = useRef(null)
 const [isPlaying, setIsPlaying] = useState(false);
 
 const [play, { pause, duration, sound }] = useSound(daft,{preload:true, volume:0.05});
-const artist = useState('')
-const songname = useState('One More Time by Daft Punk')
+
+
+
+const playbackRef = useRef(0);
 
 const playingButton = () => {
     if (isPlaying) {
@@ -30,7 +29,7 @@ const playingButton = () => {
 
   const [currTime, setCurrTime] = useState({
     min: "",
-    sec: "",
+    sec: "00",
   }); // current position of the audio in minutes and seconds
 
   const [seconds, setSeconds] = useState(); // current position of the audio in seconds
@@ -38,20 +37,34 @@ const playingButton = () => {
  
     const sec = duration / 1000;
     const min = Math.floor(sec / 60);
-    const secRemain = Math.floor(sec % 60);
+    const secRemain = Math.floor(sec % 60).toString().padStart(2, "0");
     
     const time = {
       min: min,
       sec: secRemain
   };
 
+  useEffect(() => {
+    const savedTime = localStorage.getItem("playbackTime");
+  
+    if (savedTime && audioRef.current) {
+      playbackRef.current = parseFloat(savedTime);
+      setSeconds(parseFloat(savedTime));
+    }
+    return () => {
+      pause()
+    }
+  },[pause])
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (sound) {
-        setSeconds(sound.seek([])); // setting the seconds state with the current state
+        const currentTime = sound.seek([])
+        playbackRef.current = currentTime;
+        localStorage.setItem("playbackTime", currentTime); 
         const min = Math.floor(sound.seek([]) / 60);
-        const sec = Math.floor(sound.seek([]) % 60);
+        const sec = Math.floor(playbackRef.current % 60).toString().padStart(2, "0");
         setCurrTime({
           min,
           sec,
@@ -60,6 +73,27 @@ const playingButton = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, [sound]);
+
+  useEffect(() => {
+    if (sound) {
+      sound.seek(playbackRef.current);
+    }
+  }, [sound]);
+
+  useEffect(() => {
+    if (sound) {
+      sound.on("end", () => {
+        setIsPlaying(false);
+        setSeconds(0); // Reset the timeline bar
+        setCurrTime({ min: 0, sec: "00" }); // Reset the current time display
+      });
+    }
+  }, [sound]);
+
+
+ 
+
+
 
   return (
     <div className="p-4 bg-background text-dodgerblue border border-2 font-batik rounded-3xl w-80  ">
@@ -80,33 +114,22 @@ const playingButton = () => {
 
       <div className="flex justify-around items-center text-gray ">
       <button className="hover:scale-110 transform transition ">
-          <BiSkipPrevious size="3em" className="text-xl" />
+          <BiSkipPrevious size="3em" className="text-lg" />
         </button>
 
+          <button
+          className=" bg-gray text-dodgerblue font-bold text-sm px-3 py-2  rounded hover:bg-hover"
+          onClick={playingButton}>
+           {isPlaying ? "Pause" : "Play"}
+          </button>
 
-        {isPlaying ? (
-          <button
-          className=" bg-gray text-dodgerblue font-bold text-base px-3 py-2  rounded hover:bg-hover"
-            onClick={playingButton}
-          >
-            Stop
-            {/* <AiFillPauseCircle size="3em" className="text-green-400" /> */}
-          </button>
-        ) : (
-          <button
-            className="bg-gray text-base text-dodgerblue f font-bold py-2 px-3  rounded hover:bg-hover"
-            onClick={playingButton}
-          >
-            Play
-            {/* <AiFillPlayCircle size="3em" className="text-green-400" /> */}
-          </button>
-        )}
+        <audio ref={audioRef} src={daft} />
         
         <button className="hover:scale-110 transform transition ">
           <BiSkipNext size="3em" className="text-xl" />
         </button>
         <div>
-        <div className="time text-sm pr-4">
+        <div className="time text-sm pr-3">
           <p>
             {currTime.min}:{currTime.sec}
           </p>
@@ -122,7 +145,10 @@ const playingButton = () => {
           value={seconds}
           className="timeline"
           onChange={(e) => {
-            sound.seek([e.target.value]);
+            const newTime = e.target.value;
+            playbackRef.current = newTime; // Update playbackRef
+            sound.seek([newTime]); // Seek to the new time
+            setSeconds(newTime)
           }}
         />
       </div>

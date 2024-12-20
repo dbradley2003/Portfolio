@@ -29,8 +29,8 @@ const {currentView, setCurrentView, getCurrentViewComponent} = useContext(ViewCo
 const [viewType, setViewType] = useState("default");
 
 
-const [playHover] = useSound(hover,{preload:true,volume: 0.075,})
-const [playEffect] = useSound(click, {preload:true, volume: 0.08 });
+const [playHover] = useSound(hover,{preload:true,volume: 0.055,})
+const [playEffect] = useSound(click, {preload:true, volume: 0.06 });
 
 const throttledPlay = throttle(() => {
   playHover();

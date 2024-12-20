@@ -17,13 +17,18 @@ function TextViewer() {
   'About.txt': 
   `Hi, I’m Dominic Bradley!
 
-I’m a third-year Computer Science student at DePaul University with a strong passion for creating innovative, user-focused web applications. My expertise lies in building robust full-stack solutions using Django for backend development and React for interactive, modern frontends.
+I’m a third-year Computer Science student at DePaul University with a strong passion for building full-stack web applications. My expertise lies in using Django for backend development and React for frontend development.
 
-Currently, I work as a web developer for Hunger at Home, a nonprofit organization based in San Jose. In this role, I develop tools that enhance operational efficiency and support impactful community services. My work allows me to combine technical skills with meaningful contributions to the community.
+Additionally, I have experience with technologies like PostgreSQL, AWS, Azure, Docker, and CI/CD pipelines, which I leverage to create scalable and secure applications.
 
-Technology excites me because of its ability to transform ideas into impactful solutions. My experience building full-stack applications has allowed me to bring entrepreneurial projects to life, from real-time collaboration platforms to scalable web solutions. These skills have inspired me to explore new domains like finance and trading, where I aim to apply my knowledge to develop projects such as trading algorithms and data-driven tools that unlock new opportunities and insights.
+I currently work as a web developer for Hunger at Home, a nonprofit organization based in San Jose. In this role, I develop tools that enhance operational efficiency and support impactful community services.
 
-Outside of work, I enjoy exploring new technologies, tackling challenging projects, and continuously expanding my knowledge in software development. I’m always eager to connect, collaborate, and build solutions that make a difference.
+Currently, I've been working on a real-time collaboration platform called TeamUp, which connects film students to collaborate on creative projects and build professional experience. The platform is designed to help students discover projects, showcase their skills, and connect with others to develop their portfolios and improve their chances of securing jobs in the competitive film industry.
+
+I also have a strong interest for trading and finance and am currently developing my skills to build predictive trading platforms that empower users to make smarter trading decisions.
+
+I’m excited to continue learning and growing as a developer and look forward to new opportunities to apply my skills and contribute to innovative projects.
+
 
 `,
 "TeamUpNow.txt": `<b>TeamUp:</b>

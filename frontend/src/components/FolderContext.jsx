@@ -1,11 +1,12 @@
 
 import React, { createContext, useState } from 'react';
-
+import click from "../sounds/click.mp3"
+import useSound from "use-sound"; // for handling the sound 
 const FolderContext = createContext();
 
  export const FolderProvider = ({children}) => {
     
-
+    const [playEffect] = useSound(click, {preload:true, volume: 0.06 });
     const [currentFolder,setCurrentFolder] = useState('root')
     const [folderHistory, setFolderHistory] = useState([])
 
@@ -16,6 +17,7 @@ const FolderContext = createContext();
     }
 
     const navigateBack = () => {
+        playEffect()
         setFolderHistory((prevHistory) => {
           const newHistory = [...prevHistory];
           console.log(newHistory)
