@@ -159,7 +159,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
  
 
 
-<Draggable cancel="tr">
+{/* <Draggable cancel="tr"> */}
 
   
   <div 
@@ -178,11 +178,11 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   <span className="ml-4 text-xs md:text-sm">File Explorer - /{currentFolder}</span>
 </div>
 
-<div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
+<div className="flex-1  sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
    
 
   <table
-  className={`table-auto border text-left 
+  className={`table-auto border 
     shadow-md bg-white-500 font-inter text-dodgerblue text-left    
     ${
     currentView ? "w-full" : "md:w-screen mx-auto "
@@ -243,7 +243,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   </div>
   
   </div>
-  </Draggable>
+  {/* </Draggable> */}
 
   {currentView && (
     <div className="md:col-span-1 lg:pl-12 text-2xl mt-10 lg:mt-0 flex justify-center items-center">

@@ -58,6 +58,23 @@
 }
 
 
+@layer components {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Adjust height of the colored area above the navbar */
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust height of the colored area above the navbar */
+    background-color: #1D40AF;
+    z-index: -1; /* Place it behind the navbar */
+  }
+}
+
 @layer base {
   * {
     margin: 0;

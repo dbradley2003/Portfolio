@@ -11,12 +11,12 @@ export default function Home() {
 
 
 return (
-  <div className="flex flex-col items-center mt-14 md:mt-16  2xl:mt-24 w-full">
-<div className="flex flex-col lg:flex-row mt-0 md:mt-12  2xl:mt-24 ">  
+ 
+<div className="mt-14 md:mt-24">  
 <FileExplorer />
 </div>
 
-</div>
+
   );
 
 
