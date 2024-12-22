@@ -3,7 +3,7 @@ import tailwindcssAnimate from "tailwindcss-animate";
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
-    content: ["./src/**/*.{js,ts,jsx,tsx}"],
+    content: ["./src/**/*.{js,ts,jsx,tsx}","./index.html"],
 	future: {
 		hoverOnlyWhenSupported: true, // 👈 enable hover only when supported
 	  },
@@ -29,9 +29,14 @@ export default {
   	extend: {
   		animation: {
   			typing: 'typing 4s steps(20,end)',
-  			blink: 'blink 1s step-end infinite'
+  			blink: 'blink 1s step-end infinite',
+			'fade-in': 'fadeIn 2s ease-in-out',
   		},
   		keyframes: {
+			fadeIn: {
+			'0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+			},
   			typing: {
   				from: {
   					width: '0'
@@ -70,10 +75,10 @@ export default {
   			}
   		},
   		colors: {
-  			
+  			white: '#FFFFFF',
   			pink: '#ef58a0',
   			purple: '#8e2a8b',
-  		
+			shadowWhite: "#FAFAFA",
   			neongreen: '#00FF7F',
   			cyan: '#00CED1',
   			
@@ -130,36 +135,13 @@ export default {
   			}
   		},
   		fontFamily: {
-  			daft: [
-  				'daft',
-  				'sans-serif'
-  			],
-  			blur: [
-  				'blur',
-  				'sans-serif'
-  			],
-  			banco: [
-  				'banco',
-  				'sans-serif'
-  			],
   			windows: [
   				'windows',
   				'sans-serif'
   			],
-  			pixel: [
-  				'pixel',
-  				'sans-serif'
-  			],
-  			pixel2: [
-  				'pixel2',
-  				'sans-serif'
-  			],
+  			
   			terminal: [
   				'terminal',
-  				'sans-serif'
-  			],
-  			apple: [
-  				'apple',
   				'sans-serif'
   			],
   			appleMedium: [

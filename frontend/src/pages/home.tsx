@@ -19,7 +19,7 @@ return (
 
     </h1>
         {/* Stationary Blinking Cursor */}
-        <span className="animate-blink text-left  font-inter font-bold text-blue-800 text-3xl   md:text-4xl whitespace-nowrap">|</span>
+        <span className="animate-blink text-left  font-inter font-bold text-blue-800 text-3xl md:text-4xl whitespace-nowrap">|</span>
         </div>
  
  

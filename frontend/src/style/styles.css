@@ -1,0 +1,50 @@
+/* Default styles for .dialogcontent */
+
+
+
+
+
+
+
+.dialogcontent {
+    min-width: 900px !important;
+    
+    padding:30px !important;
+    border-radius:8px !important;
+    text-align: left;
+
+}
+
+/* For large screens (1768px and below) */
+@media (max-width: 1768px) {
+    .dialogcontent {
+        min-width: 800px !important;
+        
+        /* Uncomment these if needed */
+        /* padding: 30px !important; */
+        /* border-radius: 6px !important; */
+    }
+}
+
+/* For mobile screens (768px and below) */
+@media (max-width: 768px) {
+    .dialogcontent {
+       
+        font-size: 11px !important;
+        width: 300px !important;
+        min-width: unset !important;
+       text-align: left !important;
+        
+        
+    }
+    .dialog-title{
+        font-size: 14px !important;
+        font-weight: 600;
+        color: #000;
+        
+    }
+    .dialog-desc{
+        font-size: 10px !important;
+        
+    }
+}
