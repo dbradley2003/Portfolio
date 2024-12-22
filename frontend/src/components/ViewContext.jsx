@@ -7,23 +7,22 @@ const ViewContext = createContext()
 export const ViewProvider = ({children}) => {
 
 const componentMap = {
-default: <DefaultView />,
+default: <DefaultView onClose={() => setCurrentView(null)} />,
 musicPlayer: <MusicPlayer />,
-none: ''
+
 };
 
 
 const [currentView, setCurrentView] = useState(() => {
     const savedView = localStorage.getItem("currentView")
-    return savedView ? savedView : 'default'
-},)
-
+    return savedView ? savedView : 'default' 
+    })
 useEffect(() => {
     localStorage.setItem('currentView', currentView)
 }, [currentView])
 
 const getCurrentViewComponent = () => {
-    return componentMap[currentView] || <DefaultView />;
+    return componentMap[currentView] || <DefaultView onClose={() => setCurrentView('nothing')} />;
   };
 
 

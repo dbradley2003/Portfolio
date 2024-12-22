@@ -34,7 +34,7 @@ function FileExplorer() {
 
 const navigate = useNavigate();
 const musicComponent = <MusicPlayer /> 
-const defaultComponent = <DefaultView />;
+const defaultComponent = <DefaultView onClose={() => setCurrentView('nothing')} />;
 
 const soundUrl = hover
 const clickurl = click
@@ -58,12 +58,10 @@ const handleMouseEnter = () => {
   throttledPlay();
 }
 
-// const handleBack = () => {
-//   playEffect()
-//   setCurrentFolder("root")
-//   setCurrentView(defaultComponent);
-//   setViewType("default");
-// }
+const onClose = () => {
+  
+setCurrentView(null)
+}
 
 const isLgScreen = useMediaQuery({ query: "(min-width: 1024px)" });
 
