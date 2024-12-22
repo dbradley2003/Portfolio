@@ -1,7 +1,12 @@
+
+
 <!doctype html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" href="dist/output.css" as="style">
+<link href="dist/output.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/Portfolio/icons8-resume.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
@@ -11,11 +16,42 @@
     referrerpolicy="no-referrer-when-downgrade"
     alt=""
   />
-    <script type="module" crossorigin src="/Portfolio/assets/index-2ujT8Yof.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-vJ3fpsx6.css">
+
+  <!-- <script>
+    // JavaScript for Intro Screen Behavior
+    document.addEventListener("DOMContentLoaded", () => {
+      const introScreen = document.getElementById("intro-screen");
+      const rootContent = document.getElementById("root");
+
+      // Simulate a loading delay
+      setTimeout(() => {
+        introScreen.style.opacity = 0; // Fade out
+        setTimeout(() => {
+          introScreen.classList.add("hidden"); // Hide the intro screen
+          rootContent.classList.remove("hidden"); // Show main content
+        }, 1000); // Match fade-out duration
+      }, 3000); // 3-second delay
+    });
+  </script> -->
+
+    <script type="module" crossorigin src="/Portfolio/assets/index-CrXXO98Z.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-CXjtFcbB.css">
   </head>
-  
   <body>
-    <div id="root"></div>
+    <!-- <div 
+    id="intro-screen"
+    class="fixed inset-0 bg-gray-900 
+     flex flex-col 
+    justify-center items-center 
+    z-50 opacity-100 transition-opacity duration-1000"
+    >
+    <div class="text-center animate-fade-in">
+      <h1 class="text-4xl font-bold  mb-4">Welcome to My Portfolio</h1>
+      <p class="text-3xl">Loading your experience...</p>
+    </div>
+  </div> -->
+
+    <div id="root" > </div>
+   
   </body>
 </html>
