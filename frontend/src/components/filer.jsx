@@ -125,42 +125,29 @@ else if (item.type == "file"){
 
       
     }
-//  switch (fileType) {
-//   case "txt":
-//     navigate(`/Portfolio/text/${item.name}`);
-//     break;
-//   case "pdf":
-//     navigate(`/Portfolio/pdf/${item.name}`);
-//     break;
-  
-//   case "url":
-//     navigate(`/Portfolio/url/${item.name}`);
-//     break; 
-//     }
   }
 }
 
 return (
   
 <section 
-className={`mb-16 
+className={`
+mb-16 
 md:mb-0 
 grid 
-h-full
 grid-cols-full
-
 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
- `}>
-
+`}>
+<>
 <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
 <DialogContent
-  className="dialogcontent w-[80%] md:w-[85%]  md:min-w-[85%] bg-shadowWhite rounded-md shadow-md p-6 border border-stone-500 text-xs md:text-base font-windows"
-  onOpenAutoFocus={true}
+   className="dialogcontent bg-shadowWhite rounded-md shadow-md border border-stone-500 text-xs md:text-base font-windows "
+   onOpenAutoFocus={true}
 
 >
     <DialogHeader>
       <DialogTitle className="dialog-title text-blue-500  text-base md:text-xl font-windows">{selectedFile}</DialogTitle>
-      <DialogDescription className="dialog-desc font-mono  text-xs md:text-sm">{fileDesc[selectedFile]}</DialogDescription>
+      <DialogDescription className="dialog-desc font-mono text-xs md:text-sm">{fileDesc[selectedFile]}</DialogDescription>
       {selectedFile && (
       parse(fileContents[selectedFile]) || "File not found."
       )}
@@ -168,7 +155,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
     </DialogHeader>
   </DialogContent>
 </Dialog>
-
+</>
  
 
 
@@ -176,7 +163,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
 
   
   <div 
-  className={`flex flex-col h-full  
+  className={`flex flex-col h-full 
     ${currentView ? " md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
   `}
   >
@@ -188,10 +175,10 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
     <BsCircleFill className="text-yellow-500" />
     <BsCircleFill className="text-green-500" />
   </div>
-  <span className="ml-4 text-xs md:text-sm ">File Explorer - /{currentFolder}</span>
+  <span className="ml-4 text-xs md:text-sm">File Explorer - /{currentFolder}</span>
 </div>
 
-<div className="flex-1  overflow-auto sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
+<div className="flex-1 overflow-auto sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
    
 
   <table

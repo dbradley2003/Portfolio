@@ -56,12 +56,23 @@
     --chart-5: 340 75% 55%
   }
 }
+
+
 @layer base {
   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-shadowWhite text-foreground;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Ensure no horizontal overflow */
   }
 }
 

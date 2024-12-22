@@ -9,10 +9,7 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "@utils": path.resolve(__dirname, "src/utils"),
-      
+    },
   },
-  "extensions": [".js", ".jsx", ".ts", ".tsx"]// Ensure these extensions are included
-}
-
+    extensions: [".js", ".jsx", ".ts", ".tsx"], // Ensure these extensions are included
 });
-

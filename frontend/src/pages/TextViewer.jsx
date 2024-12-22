@@ -31,10 +31,10 @@ I’m excited to continue learning and growing as a developer and look forward t
 
 
 `,
-"TeamUpNow.txt": `
+"TeamUpNow.txt": `<b>TeamUp:</b>
 <b>A Real-Time Collaboration Platform for Film Students</b>
 
-<p style="text-decoration: underline;"> Overview: </p>
+<p style="text-decoration: underline;">Overview:</p>
 TeamUp is a startup I developed to connect film students with peers to collaborate on creative projects and build professional experience. The platform is designed to help students discover projects, showcase their skills, and connect with others to develop their portfolios and improve their chances of securing jobs in the competitive film industry. By bridging gaps in communication and collaboration, TeamUp fosters a professional network that supports students' career growth.
 
 <b>Technologies Used:</b>

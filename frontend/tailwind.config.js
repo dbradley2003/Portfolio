@@ -3,7 +3,7 @@ import tailwindcssAnimate from "tailwindcss-animate";
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
-    content: ["./src/**/*.{js,ts,jsx,tsx}","./index.html"],
+    content: ['./src/**/*.{html,js,jsx,ts,tsx}', './public/index.html'],
 	future: {
 		hoverOnlyWhenSupported: true, // 👈 enable hover only when supported
 	  },
@@ -80,8 +80,8 @@ export default {
   			purple: '#8e2a8b',
 			shadowWhite: "#FAFAFA",
   			neongreen: '#00FF7F',
-  			cyan: '#00CED1',
-  			
+  			// cyan: '#00CED1',
+  			lightgray: '#F3F4F6',
   			gray: '#D4D2C8',
   			
   			link: '#3b82f6',
