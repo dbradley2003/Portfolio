@@ -130,7 +130,9 @@ return (
 <section 
 className={`
 grid 
+p-6
 items-center
+justify-center
 grid-cols-full
 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
 
@@ -162,7 +164,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   
   <div 
   className={`flex flex-col h-full 
-    ${currentView ? " md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
+    ${currentView ? "md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
   `}
   >
   
@@ -176,11 +178,11 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   <span className="ml-4 text-xs md:text-sm">File Explorer - /{currentFolder}</span>
 </div>
 
-<div className="flex-1 overflow-auto  sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
+<div className="flex-1 sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
    
 
   <table
-  className={`table-auto  
+  className={`table-auto w-full  
     shadow-md bg-white-500 font-inter text-dodgerblue text-left    
     ${
     currentView ? "w-full" : "md:w-screen mx-auto "
@@ -197,7 +199,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
         </thead>
     <tbody className="text-base md:text-lg lg:text-xl ">
     {currentFolder !== "root" && (
-  <tr className="cursor-pointer md:hover hover:bg-red-100  hover:scale" onClick={navigateBack}>
+  <tr className="cursor-pointer md:hover font-bold  hover:scale" onClick={navigateBack}>
   <td colSpan={4} className=" px-2 border-2 border-neutral-300  text-left h-20 ">
     {".."} (Back)
   </td>
@@ -244,7 +246,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   {/* </Draggable> */}
 
   {currentView && (
-    <div className="md:col-span-1 lg:pl-12 text-2xl mt-4 lg:mt-0 flex justify-center items-center">
+    <div className=" mt-4 md:mt-0 md:col-span-1 pl-0  md:pl-12 lg:pl-12 text-2xl flex justify-center items-center">
       {getCurrentViewComponent()}
     </div>
   )}

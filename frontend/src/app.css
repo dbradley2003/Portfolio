@@ -1,9 +1,10 @@
 
-body, html, #root {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-height:100vh;
-}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
 
 
 
