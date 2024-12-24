@@ -7,7 +7,6 @@ function Navbar() {
     return (
       <nav className="navbar bg-blue-800 border-b-2 border-stone-300 h-[80px] w-full">
       
-  {/* <div class=" flex flex-nowrap h-full md:flex-wrap items-center  justify-between mx-auto  px-2 md:px-6 gap-8"> */}
   <div className="flex flex-wrap md:flex-nowrap h-full items-center justify-between mx-auto px-4 sm:px-6 md:px-8 gap-4 ">
               <p className=" text-center text-neutral-50 text-lg  md:text-3xl font-appleMedium">
            Dominic's Web Portfolio

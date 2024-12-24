@@ -130,13 +130,17 @@ return (
 <section 
 className={`
 grid 
-p-6
-items-center
 justify-center
 grid-cols-full
-md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
+md:grid-cols-3 
+lg:grid-cols-4 
+2xl:grid-cols-5
+mb-0
 
 `}>
+  <div className="flex flex-col  ">
+   {getCurrentViewComponent()}
+  </div>
 <>
 <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
 <DialogContent
@@ -163,8 +167,8 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
 
   
   <div 
-  className={`flex flex-col h-full 
-    ${currentView ? "md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full px-8 "}
+  className={`flex flex-col md:pl-8 
+    ${currentView ? "md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full  "}
   `}
   >
   
@@ -182,10 +186,10 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
    
 
   <table
-  className={`table-auto w-full  
+  className={`table-auto  
     shadow-md bg-white-500 font-inter text-dodgerblue text-left    
     ${
-    currentView ? "w-full" : "md:w-screen mx-auto "
+    currentView ? "w-full" : "w-full"
   }`}
 >
     <thead>
@@ -245,11 +249,14 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   </div>
   {/* </Draggable> */}
 
-  {currentView && (
-    <div className=" mt-4 md:mt-0 md:col-span-1 pl-0  md:pl-12 lg:pl-12 text-2xl flex justify-center items-center">
+  {/* {currentView && (
+    <div className="ml-0 mr-0 md:ml-6 mt-12 md:mt-0 md:mb-0 
+    flex 
+    justify-center 
+    items-center ">
       {getCurrentViewComponent()}
     </div>
-  )}
+  )} */}
  </section>
 
 
