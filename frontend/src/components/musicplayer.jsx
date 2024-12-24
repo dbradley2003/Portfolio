@@ -96,9 +96,9 @@ const playingButton = () => {
 
 
   return (
-    <div className="p-4 bg-background text-dodgerblue border border-2 font-batik rounded-3xl w-80  ">
-      <h2 className="text-xl md:text-2xl font-bold underline mb-4 text-center ">
-      My Tunes
+    <div className="p-4 bg-background text-dodgerblue  border-2 font-batik rounded-3xl w-80  ">
+      <h2 className="text-xl md:text-2xl font-bold  mb-4 text-center ">
+      My Playlist
     </h2>
       <div className="flex flex-col items-center space-y-2">
       <img
@@ -106,19 +106,19 @@ const playingButton = () => {
         src="https://picsum.photos/200/200"
         alt="Music Cover"
       />
-      <div className="text-center text-lg font-bold">
+      <div className="text-center text-base ">
         Now Playing: "One More Time"
       </div>
     </div>
      
 
-      <div className="flex justify-around items-center text-gray ">
+      <div className="flex justify-around items-center text-neutral-300 ">
       <button className="hover:scale-110 transform transition ">
           <BiSkipPrevious size="3em" className="text-lg" />
         </button>
 
           <button
-          className=" bg-gray text-dodgerblue font-bold text-sm px-3 py-2  rounded hover:bg-hover"
+          className=" bg-dodgerblue text-white font-bold  text-base px-3 py-2  rounded hover:bg-blue-600"
           onClick={playingButton}>
            {isPlaying ? "Pause" : "Play"}
           </button>
@@ -129,7 +129,7 @@ const playingButton = () => {
           <BiSkipNext size="3em" className="text-xl" />
         </button>
         <div>
-        <div className="time text-sm pr-3">
+        <div className="time text-sm text-neutral-300  pr-3">
           <p>
             {currTime.min}:{currTime.sec}
           </p>
@@ -143,7 +143,7 @@ const playingButton = () => {
           max={duration / 1000}
           default="0"
           value={seconds}
-          className="timeline"
+          className="timeline text-neutral-400 "
           onChange={(e) => {
             const newTime = e.target.value;
             playbackRef.current = newTime; // Update playbackRef

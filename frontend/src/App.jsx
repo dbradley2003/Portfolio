@@ -7,6 +7,7 @@ import PDFViewer from './pages/PDFViewer';
 import URLViewer from './pages/URLViewer';
 import  {FolderProvider}   from './components/FolderContext';
 import { ViewProvider } from './components/ViewContext';
+import FileExplorer from './components/filer';
 import './input.css';
 
 function App() {
@@ -14,11 +15,11 @@ function App() {
   return (
 
    
-      
+    
         <ViewProvider>
         <FolderProvider>
         <Layout>   
-            <Pages /> 
+            <Pages  /> 
             </Layout>
             </FolderProvider> 
             </ViewProvider>     
@@ -31,10 +32,11 @@ function App() {
     return(
 
       <Routes>
-        <Route path="/Portfolio/" element={<Home />} />
-        <Route path="/Portfolio/text/:fileName" element={<TextViewer />} />
+        
+        <Route path="/Portfolio/" element={<FileExplorer />} />
+        {/* <Route path="/Portfolio/text/:fileName" element={<TextViewer />} />
         <Route path="/Portfolio/pdf/:fileName" element={<PDFViewer />} />
-        <Route path="/Portfolio/url/:fileName" element={<URLViewer />} />
+        <Route path="/Portfolio/url/:fileName" element={<URLViewer />} /> */}
       </Routes>
   
  

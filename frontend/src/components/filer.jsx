@@ -34,7 +34,7 @@ function FileExplorer() {
 
 const navigate = useNavigate();
 const musicComponent = <MusicPlayer /> 
-const defaultComponent = <DefaultView onClose={() => setCurrentView('nothing')} />;
+const defaultComponent = <DefaultView onClose={() => setCurrentView(null)} />;
 
 const soundUrl = hover
 const clickurl = click
@@ -79,7 +79,6 @@ const folders = {
     {name: "TradeAnalysis.txt", type:"file", size:"3.4KB",modified:"2024-12-15"},
   ],
   Contact: [
-    {name: "Email.txt", type:"file", size:"3.4KB",modified:"2024-12-15"},
     {name: "LinkedIn.url", type:"file", size:"3.4KB",modified:"2022-12-01"},
     {name: "GitHub.url", type:"file", size:"3.4KB",modified:"2024-12-15"}
   ],
@@ -130,26 +129,27 @@ return (
   
 <section 
 className={`
-mb-16 
-md:mb-0 
 grid 
+items-center
 grid-cols-full
 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
+
 `}>
 <>
 <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
 <DialogContent
-   className="dialogcontent bg-shadowWhite rounded-md shadow-md border border-stone-500 text-xs md:text-base font-windows "
+   className="dialog-content text-base md:text-base  bg-shadowWhite rounded-md shadow-md border border-stone-500 font-windows"
    onOpenAutoFocus={true}
 
 >
     <DialogHeader>
-      <DialogTitle className="dialog-title text-blue-500  text-base md:text-xl font-windows">{selectedFile}</DialogTitle>
-      <DialogDescription className="dialog-desc font-mono text-xs md:text-sm">{fileDesc[selectedFile]}</DialogDescription>
+      <DialogTitle className="dialog-title pb-1 text-center text-lg md:text-2xl  text-blue-500 font-windows">{selectedFile}</DialogTitle>
+      <DialogDescription className=" dialog-description text-center text-xs md:text-sm leading-6  font-mono">{fileDesc[selectedFile]}</DialogDescription>
+      <div className="text-left leading-6 pt-4  ">
       {selectedFile && (
       parse(fileContents[selectedFile]) || "File not found."
       )}
-
+</div>
     </DialogHeader>
   </DialogContent>
 </Dialog>
@@ -176,18 +176,18 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   <span className="ml-4 text-xs md:text-sm">File Explorer - /{currentFolder}</span>
 </div>
 
-<div className="flex-1  sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
+<div className="flex-1 overflow-auto  sm:overflow-hidden md:overflow-hidden rounded-b-md  ">
    
 
   <table
-  className={`table-auto border 
+  className={`table-auto  
     shadow-md bg-white-500 font-inter text-dodgerblue text-left    
     ${
     currentView ? "w-full" : "md:w-screen mx-auto "
   }`}
 >
     <thead>
-      <tr className=" text-xs md:text-base lg:text-lg ">
+      <tr className=" text-xs md:text-base lg:text-lg  ">
         <TH className="w-2/6 px-2">Name</TH>
         <TH className="w-1/6 px-2">Size</TH>
         <TH className="w-1/6 px-2">Type</TH>
@@ -195,10 +195,10 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
             
           </tr>
         </thead>
-    <tbody className="text-sm md:text-base lg:text-xl ">
+    <tbody className="text-base md:text-lg lg:text-xl ">
     {currentFolder !== "root" && (
   <tr className="cursor-pointer md:hover hover:bg-red-100  hover:scale" onClick={navigateBack}>
-  <td colSpan={4} className=" px-2 border border-stone-300  border-1   text-left h-20 ">
+  <td colSpan={4} className=" px-2 border-2 border-neutral-300  text-left h-20 ">
     {".."} (Back)
   </td>
 </tr>
@@ -211,25 +211,25 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
             onClick={() => handleFileOrFolderClick(item)}
             onMouseEnter={handleMouseEnter}
           >
-    <td className="border border-stone-300 border-1 align-middle h-20 lg:h-20 px-2 ">
-              <div className="inline-flex items-center  gap-2 ">
+    <td className="border-2 border-neutral-300  align-middle h-[90px]  px-2 ">
+              <div className="inline-flex items-center  gap-4 ">
                 {item.type === "folder" ? (
-                  <FaFolder className="text-yellow-500 text-sm md:text-lg" />
+                  <FaFolder className="text-yellow-500 text-lg md:text-2xl" />
                 ) : (
 
-                  <FaFileAlt className="text-blue-500 text-sm md:text-lg" />
+                  <FaFileAlt className="text-blue-500 text-lg md:text-2xl" />
                 
                 )}
                 <span>{item.name}</span>
               </div>
             </td>
-            <td className="border border-stone-300 border-1 px-2 ">
+            <td className="border-2 border-neutral-300  px-2 ">
               {item.size}
             </td>
-            <td className="border border-stone-300  border-1 px-2   ">
+            <td className="border-2 border-neutral-300   px-2   ">
               {item.type === "folder" ? "Folder" : item.name.split(".").pop()}
             </td>
-            <td className=" border border-stone-300 border-1 px-2">
+            <td className=" border-2 border-neutral-300  px-2">
               {item.modified}
             </td>
                 
@@ -244,7 +244,7 @@ md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
   {/* </Draggable> */}
 
   {currentView && (
-    <div className="md:col-span-1 lg:pl-12 text-2xl mt-10 lg:mt-0 flex justify-center items-center">
+    <div className="md:col-span-1 lg:pl-12 text-2xl mt-4 lg:mt-0 flex justify-center items-center">
       {getCurrentViewComponent()}
     </div>
   )}

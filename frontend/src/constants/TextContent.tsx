@@ -15,18 +15,19 @@ export const fileContents = {
   "TeamUpNow.txt": `
   <a href="https://teamupnow.org" target="_blank" rel="noopener noreferrer" style="color: #3b82f6; text-decoration: underline; ">Visit TeamUp</a> 
 
-<h2 style="text-decoration: underline; font-weight:900;">Overview:</h2>
+<h2 style="text-decoration: underline; font-weight:900; margin-top: 1rem">Overview:</h2>
 
 
   <p>TeamUp is a platform that connects film students to collaborate on creative projects 
   and build professional experience. It allows students find projects, showcase their skills, 
   and connect with others to develop their portfolios and professional experience.</p>
 
- <h2 style="text-decoration: underline; font-weight:900;">Technologies Used:</h2>
+ <h2 style="text-decoration: underline; font-weight:900; margin-top: 1rem">Technologies Used:</h2>
 
   <p>Django, React, PostgreSQL, AWS, Docker, GitHub Actions, WebSockets, MSAL-React</p>
   
-  <h2 style="text-decoration: underline; font-weight:900;">Key Features: </h2>
+  <h2 style="text-decoration: underline; font-weight:900; margin-top: 1rem">Key Features: </h2>
+
   <li> Web Sockets for real-time updates on posts and messages </li>
   <li> Microsoft Authentication for secure login </li>
   <li> Docker for containerization and deployment </li>
@@ -47,10 +48,10 @@ export const fileContents = {
   <h2 style="text-decoration: underline; font-weight:900;"> Overview: </h2>
   A simulation platform that allows users to trade foreign exchange currencies and analyze market trends to make informed trading decisions. The platform leverages predictive analytics to forecast market trends and provides users with insights into their portfolio performance.
   
-<h2 style="text-decoration: underline; font-weight:900;"> Technologies Used: </h2>
+<h2 style="text-decoration: underline; font-weight:900; margin-top: 1rem"> Technologies Used: </h2>
   Python, Django, PostgreSQL, React, HTML5, CSS3, LSTM Models, APIs
  
- <h2 style="text-decoration: underline; font-weight:900;"> Key Features: </h2>
+ <h2 style="text-decoration: underline; font-weight:900; margin-top: 1rem"> Key Features: </h2>
  
   <li> Using an LSTM model and time series data to predict future trends </li>
   <li> Utilized standard database design principles to handle future scalability </li>

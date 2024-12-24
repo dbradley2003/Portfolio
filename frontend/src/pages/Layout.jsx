@@ -6,14 +6,14 @@ export const Layout = ({children}) => {
  
 
   return (
-   
-    <div className=' bg-shadowWhite w-full '>
-     <Navbar />
-     <main className="items-center px-3 sm:px-4 md:px-8 bg-shadowWhite">
-       
+    <div className="flex flex-col h-screen  ">
+    
+   <Navbar />
+
+   <div className="flex py-6 flex-grow px-3 md:px-8 justify-center items-center bg-shadowWhite ">
         {children}
-        </main> 
-        </div>
-  
+        </div> 
+     </div>
+
   );
 }

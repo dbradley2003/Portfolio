@@ -11,12 +11,7 @@ export default function Home() {
 
 
 return (
- 
-<div className="mt-14 md:mt-24">  
 <FileExplorer />
-</div>
-
-
   );
 
 
