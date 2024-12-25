@@ -167,7 +167,7 @@ mb-0
 
   
   <div 
-  className={`flex flex-col md:pl-8 mt-8 md:mt-0
+  className={`flex flex-col md:px-12 mt-8 md:mt-0
     ${currentView ? "md:col-span-2 lg:col-span-3 2xl:col-span-4" : "md:col-span-full  "}
   `}
   >
