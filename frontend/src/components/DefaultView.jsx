@@ -7,12 +7,13 @@ export default function DefaultView({onClose}) {
 
     return (
         <div
-    className={`flex flex-col justify-center w-full md:w-80 rounded:3xl md:h-72 mr-0  col-span-full mb-6 md:mb-0 md:col-span-1 border border-gray p-6 bg-neutral-100  shadow-md `}
+    className="flex flex-col items-left justify-start p-4 text-dodgerblue  bg-background  shadow-md w-64 h-64 md:w-64 md:h-72 lg:w-80 lg:h-72 rounded-3xl border-2"
   >
-        <h1 className="text-lg md:text-xl text-blue-600 lg:text-2xl font-semibold ">
+        <h1 className=" text-center text-lg md:text-xl lg:text-2xl font-semibold mt-4  ">
         Interactive Terminal
       </h1>
-      <p className="text-xs text-blue-600 md:text-base mt-4 border-b-2 border-blue-600 pb-4">
+      <p className="border-b-2 mt-4"></p>
+      <p className="text-xs  md:text-base mt-4 ">
         Select files from the file explorer to view their contents.
       </p>
       </div>

@@ -96,18 +96,18 @@ const playingButton = () => {
 
 
   return (
-    <div className="p-4 bg-background text-dodgerblue  border-2 font-batik rounded-3xl w-80  ">
-      <h2 className="text-xl md:text-2xl font-bold  mb-4 text-center ">
+    <div className="flex flex-col items-center justify-center p-4 bg-background text-dodgerblue  border-2 font-batik rounded-3xl  w-64 h-64 md:w-64 md:h-72 lg:w-80 lg:h-72 shadow-md  ">
+      <h2 className="text-lg md:text-xl font-bold pb-2 md:pb-4  text-center ">
       My Playlist
     </h2>
-      <div className="flex flex-col items-center space-y-2">
+      <div className="flex flex-col items-center space-y-4 mb-2">
       <img
-        className="rounded-lg border-4 border-accent w-30 h-40 shadow-md "
+        className="rounded-lg border-4 border-accent w-24 h-24 shadow-md "
         src="https://picsum.photos/200/200"
         alt="Music Cover"
       />
-      <div className="text-center text-base ">
-        Now Playing: "One More Time"
+      <div className="text-center text-sm md:text-base  ">
+        <p className="">Now Playing: "One More Time"</p>
       </div>
     </div>
      
@@ -118,18 +118,18 @@ const playingButton = () => {
         </button>
 
           <button
-          className=" bg-dodgerblue text-white font-bold  text-base px-3 py-2  rounded hover:bg-blue-600"
+          className=" bg-dodgerblue text-white font-bold  text-sm md:text-sm lg:text-base px-3 py-2  rounded hover:bg-blue-600 "
           onClick={playingButton}>
            {isPlaying ? "Pause" : "Play"}
           </button>
 
-        <audio ref={audioRef} src={daft} />
+        <audio ref={audioRef} src={daft}/>
         
         <button className="hover:scale-110 transform transition ">
-          <BiSkipNext size="3em" className="text-xl" />
+          <BiSkipNext size="3em" className="text-sm md:text-sm lg:text-base" />
         </button>
         <div>
-        <div className="time text-sm text-neutral-300  pr-3">
+        <div className="time text-xs md:text-xs lg:text-sm text-neutral-300 pr-2  ">
           <p>
             {currTime.min}:{currTime.sec}
           </p>
@@ -143,7 +143,7 @@ const playingButton = () => {
           max={duration / 1000}
           default="0"
           value={seconds}
-          className="timeline text-neutral-400 "
+          className="timeline text-neutral-50 "
           onChange={(e) => {
             const newTime = e.target.value;
             playbackRef.current = newTime; // Update playbackRef
